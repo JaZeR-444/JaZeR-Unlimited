@@ -13,8 +13,9 @@ Professional website for content creator and music artist JaZeR.
 - `index.html` - Main HTML file
 - `css/style.css` - All styling
 - `js/script.js` - JavaScript functionality
-- `images/` - Place your images here
-- `files/` - Place downloadable files here (press kit, etc.)
+- `images/` - Brand images and assets
+- `robots/robots.txt` - SEO robots file
+- `sitemap/sitemap.xml` - Site map
 
 ## ✏️ Customization
 
