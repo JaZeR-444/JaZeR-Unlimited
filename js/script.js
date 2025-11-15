@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize page from hash or default
     const initial = (location.hash && location.hash.replace('#', '')) || 'home';
     // Delay slightly to ensure focus works
-    setTimeout(() => navigateTo(initial),0);
+    setTimeout(() => navigateTo(initial), 0);
 
     // Enhanced form submission handler with Formspree
     const form = document.getElementById('contactForm');
@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function lightenHex(hex, percent) {
         // hex like #rrggbb
-        const num = parseInt(hex.slice(1),16);
-        let r = (num >>16) + Math.round(255 * percent);
-        let g = ((num >>8) &0x00FF) + Math.round(255 * percent);
-        let b = (num &0x0000FF) + Math.round(255 * percent);
+        const num = parseInt(hex.slice(1), 16);
+        let r = (num >> 16) + Math.round(255 * percent);
+        let g = ((num >> 8) & 0x00FF) + Math.round(255 * percent);
+        let b = (num & 0x0000FF) + Math.round(255 * percent);
         r = Math.min(255, Math.max(0, r));
         g = Math.min(255, Math.max(0, g));
         b = Math.min(255, Math.max(0, b));
@@ -132,16 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
-                const width =40; // sample small
-                const height =40;
+                const width = 40; // sample small
+                const height = 40;
                 canvas.width = width;
                 canvas.height = height;
                 // draw image scaled to sample size
-                context.drawImage(img,0,0, width, height);
-                const data = context.getImageData(0,0, width, height).data;
-                let r =0, g =0, b =0, count =0;
-                // sample every4th pixel to reduce processing
-                for (let i =0; i < data.length; i +=16) {
+                context.drawImage(img, 0, 0, width, height);
+                const data = context.getImageData(0, 0, width, height).data;
+                let r = 0, g = 0, b = 0, count = 0;
+                // sample every 4th pixel to reduce processing
+                for (let i = 0; i < data.length; i += 16) {
                     r += data[i];
                     g += data[i+1];
                     b += data[i+2];
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 r = Math.round(r / count);
                 g = Math.round(g / count);
                 b = Math.round(b / count);
-                resolve(hexFromRgb(r,g,b));
+                resolve(hexFromRgb(r, g, b));
             } catch (err) {
                 reject(err);
             }
@@ -159,19 +159,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyBrandColors(primaryHex) {
         const root = document.documentElement;
-        const secondary = lightenHex(primaryHex,0.25);
+        const secondary = lightenHex(primaryHex, 0.25);
         root.style.setProperty('--primary-color', primaryHex);
         root.style.setProperty('--secondary-color', secondary);
         // small visual feedback: update CTA outline
         const cta = document.querySelector('.cta-button');
         if (cta) {
-            cta.style.boxShadow = `08px24px ${primaryHex}33`;
+            cta.style.boxShadow = `0 8px 24px ${primaryHex}33`;
         }
     }
 
     function initBrandGallery() {
         const items = document.querySelectorAll('.gallery-item');
-        if (!items || items.length ===0) return;
+        if (!items || items.length === 0) return;
         items.forEach(btn => {
             const img = btn.querySelector('img');
             // ensure image is loaded before trying to sample
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             };
 
-            if (img.complete && img.naturalWidth !==0) doInit();
+            if (img.complete && img.naturalWidth !== 0) doInit();
             else img.addEventListener('load', doInit);
         });
     }
