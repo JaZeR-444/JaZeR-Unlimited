@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // small visual feedback: update CTA outline
         const cta = document.querySelector('.cta-button');
         if (cta) {
-            cta.style.boxShadow = `08px24px ${primaryHex}33`;
+            cta.style.boxShadow = `0 8px 24px ${primaryHex}33`;
         }
     }
 
