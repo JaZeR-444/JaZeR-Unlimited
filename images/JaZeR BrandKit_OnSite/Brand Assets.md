@@ -104,6 +104,9 @@ Primary emphasis is purples, blues, pinks, and golds. Values below include HEX, 
 
 ### CSS variables
 ```css
-:root {{
+:root {
 {css_vars}
-}}
+}
+
+
+"""
