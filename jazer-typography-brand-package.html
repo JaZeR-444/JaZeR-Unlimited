@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JaZeR Typography Brand Package - Bubbly Edition ✨</title>
+  
+  <!-- Brand Fonts - Matching Your Logo! -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ============================================
+       JAZER BRAND TYPOGRAPHY SYSTEM
+       Version 1.0 - Futuristic Edition
+       ============================================ */
+
+    :root {
+      /* Brand Fonts - MATCHING YOUR ACTUAL LOGO */
+      --font-primary: 'Nunito', sans-serif;          /* Logo, Hero - Matches your logo! */
+      --font-secondary: 'Outfit', sans-serif;        /* Headers, Titles - Rounded & Modern */
+      --font-body: 'DM Sans', sans-serif;            /* Body, UI - Friendly & Readable */
+      
+      /* Alternative Font Options */
+      --font-alt-rounded: 'Poppins', sans-serif;     /* Alternative rounded option */
+      --font-alt-geometric: 'Rubik', sans-serif;     /* Alternative geometric option */
+      
+      /* Brand Colors - VIBRANT PALETTE */
+      --jazer-blue-light: #00f2fe;
+      --jazer-blue-mid: #4facfe;
+      --jazer-purple: #9333ea;
+      --jazer-magenta: #ff00ff;
+      --jazer-cyan: #00f2ea;
+      --jazer-pink: #ff006e;
+      --jazer-yellow: #ffbe0b;
+      --jazer-orange: #ff8800;
+      
+      /* Gradients - PLAYFUL */
+      --gradient-primary: linear-gradient(135deg, #ffbe0b 0%, #ff006e 50%, #ff00ff 100%);
+      --gradient-text: linear-gradient(135deg, #00f2fe 0%, #ff006e 50%, #ffbe0b 100%);
+      --gradient-accent: linear-gradient(135deg, #9333ea 0%, #ff00ff 100%);
+      
+      /* Backgrounds */
+      --bg-dark: #000000;
+      --bg-card: rgba(255, 255, 255, 0.05);
+      --bg-bubble: rgba(255, 0, 110, 0.1);
+      --text-light: #ffffff;
+      --text-gray: #b0b0b0;
+      --text-muted: #808080;
+      
+      /* Typography Scale - Mobile First */
+      --text-xs: 0.75rem;      /* 12px */
+      --text-sm: 0.875rem;     /* 14px */
+      --text-base: 1rem;       /* 16px */
+      --text-lg: 1.125rem;     /* 18px */
+      --text-xl: 1.25rem;      /* 20px */
+      --text-2xl: 1.5rem;      /* 24px */
+      --text-3xl: 1.875rem;    /* 30px */
+      --text-4xl: 2.25rem;     /* 36px */
+      --text-5xl: 3rem;        /* 48px */
+      --text-6xl: 3.75rem;     /* 60px */
+      --text-7xl: 4.5rem;      /* 72px */
+      --text-8xl: 6rem;        /* 96px */
+      
+      /* Line Heights - MORE BREATHING ROOM */
+      --leading-tight: 1.2;
+      --leading-snug: 1.35;
+      --leading-normal: 1.6;
+      --leading-relaxed: 1.8;
+      --leading-loose: 2;
+      
+      /* Letter Spacing - WIDER FOR FRIENDLINESS */
+      --tracking-tighter: -0.025em;
+      --tracking-tight: 0;
+      --tracking-normal: 0.01em;
+      --tracking-wide: 0.03em;
+      --tracking-wider: 0.05em;
+      --tracking-widest: 0.1em;
+    }
+
+    /* ============================================
+       BASE STYLES
+       ============================================ */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: var(--leading-normal);
+      padding: 2rem;
+    }
+
+    /* ============================================
+       TYPOGRAPHY CLASSES - THE JAZER SYSTEM
+       ============================================ */
+
+    /* TIER 1: BRAND IMPACT (Nunito - Matches Your Logo!) */
+    
+    .jazer-hero {
+      font-family: var(--font-primary);
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-normal);
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+    }
+
+    .jazer-logo {
+      font-family: var(--font-primary);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: var(--tracking-wide);
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+    }
+
+    .jazer-display {
+      font-family: var(--font-primary);
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-normal);
+      text-transform: uppercase;
+    }
+
+    /* TIER 2: SECTION HEADERS (Outfit - Smooth, Rounded, Modern) */
+    
+    .jazer-h1 {
+      font-family: var(--font-secondary);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .jazer-h2 {
+      font-family: var(--font-secondary);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-h3 {
+      font-family: var(--font-secondary);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-h4 {
+      font-family: var(--font-secondary);
+      font-size: clamp(1.25rem, 2vw, 1.875rem);
+      font-weight: 600;
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-h5 {
+      font-family: var(--font-secondary);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-h6 {
+      font-family: var(--font-secondary);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+    }
+
+    /* TIER 3: BODY & UI (DM Sans - Friendly & Readable) */
+    
+    .jazer-body-xl {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-body-lg {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 400;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-body-sm {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 400;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-caption {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* TIER 4: SPECIALTY CLASSES */
+    
+    .jazer-lead {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+      color: var(--text-gray);
+    }
+
+    .jazer-quote {
+      font-family: var(--font-secondary);
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 500;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+      font-style: italic;
+    }
+
+    .jazer-label {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--jazer-pink);
+    }
+
+    .jazer-button-text {
+      font-family: var(--font-secondary);
+      font-size: var(--text-base);
+      font-weight: 700;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+    }
+
+    .jazer-nav-link {
+      font-family: var(--font-secondary);
+      font-size: var(--text-base);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-eyebrow {
+      font-family: var(--font-primary);
+      font-size: var(--text-xs);
+      font-weight: 900;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--jazer-yellow);
+    }
+
+    .jazer-stat-number {
+      font-family: var(--font-primary);
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-normal);
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .jazer-stat-label {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--text-gray);
+    }
+
+    /* ============================================
+       UTILITY CLASSES
+       ============================================ */
+
+    .gradient-text {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .text-glow {
+      text-shadow: 0 0 20px rgba(79, 172, 254, 0.6),
+                   0 0 40px rgba(79, 172, 254, 0.4);
+    }
+
+    .text-uppercase { text-transform: uppercase; }
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+
+    /* ============================================
+       DEMO PAGE STYLING
+       ============================================ */
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin: 6rem 0;
+      padding: 3rem;
+      background: var(--bg-card);
+      border-radius: 32px;
+      border: 2px solid rgba(255, 0, 110, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 0, 110, 0.1) 0%, transparent 70%);
+      animation: bubble-float 20s ease-in-out infinite;
+    }
+
+    @keyframes bubble-float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-20px, -20px) scale(1.1); }
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, #ffbe0b 0%, #ff006e 50%, #ff00ff 100%) 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .type-demo {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(255, 190, 11, 0.05);
+      border-radius: 20px;
+      border-left: 6px solid var(--jazer-pink);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .type-demo:hover {
+      transform: translateX(8px);
+      border-left-color: var(--jazer-yellow);
+      box-shadow: -8px 0 30px rgba(255, 0, 110, 0.2);
+    }
+
+    .type-demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .type-name {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--jazer-pink);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wider);
+    }
+
+    .type-specs {
+      font-family: 'Courier New', monospace;
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .usage-card {
+      background: var(--bg-bubble);
+      padding: 2rem;
+      border-radius: 24px;
+      border: 2px solid rgba(255, 0, 110, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .usage-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(255, 190, 11, 0.1) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .usage-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 0, 110, 0.6);
+      box-shadow: 0 20px 60px rgba(255, 0, 110, 0.3);
+    }
+
+    .usage-card:hover::before {
+      opacity: 1;
+    }
+
+    .usage-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .usage-icon {
+      font-size: 2rem;
+    }
+
+    .do-dont-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .do-card, .dont-card {
+      padding: 2rem;
+      border-radius: 24px;
+      border: 3px solid;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .do-card {
+      background: rgba(34, 197, 94, 0.08);
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    .do-card::before {
+      content: '✨';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+
+    .dont-card {
+      background: rgba(239, 68, 68, 0.08);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    .dont-card::before {
+      content: '💥';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+
+    .do-card h4, .dont-card h4 {
+      font-family: var(--font-secondary);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .do-card h4 { color: #22c55e; }
+    .dont-card h4 { color: #ef4444; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--jazer-pink);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      background: rgba(255, 0, 110, 0.1);
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      background: rgba(255, 0, 110, 0.15);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      color: var(--jazer-yellow);
+      border: 1px solid rgba(255, 0, 110, 0.3);
+    }
+
+    .code-block {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1.5rem;
+      border-radius: 16px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 2px solid rgba(255, 190, 11, 0.2);
+    }
+
+    .code-block pre {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      font-size: var(--text-sm);
+      color: var(--text-gray);
+    }
+
+    @media (max-width: 768px) {
+      .do-dont-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .usage-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <div style="text-align: center; margin: 4rem 0 6rem; position: relative;">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">🎵✨</div>
+      <div class="jazer-logo" style="margin-bottom: 1rem;">JAZER</div>
+      <div class="jazer-h2">Typography Brand Package</div>
+      <div class="jazer-lead" style="margin-top: 1rem;">Bubbly, fun, and energetic futuristic typography ✨</div>
+    </div>
+
+    <!-- ============================================
+         SECTION 1: FONT FAMILY OVERVIEW
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Font Family System</h2>
+        <p class="jazer-lead">Three carefully selected typefaces for maximum impact</p>
+      </div>
+
+      <div class="usage-grid">
+        <!-- Font 1: Nunito -->
+        <div class="usage-card">
+          <div class="usage-card-header">
+            <span class="usage-icon">⚡</span>
+            <div>
+              <h3 class="jazer-h4">Nunito</h3>
+              <p class="jazer-caption">Primary Brand Font</p>
+            </div>
+          </div>
+          <div style="font-family: var(--font-primary); font-size: 2rem; font-weight: 900; margin: 1.5rem 0;">
+            JAZER
+          </div>
+          <p class="jazer-body-sm" style="color: var(--text-gray); margin-bottom: 1rem;">
+            <strong>Perfect match for your actual logo!</strong> Bold, rounded, friendly with that exact bubbly personality. Nunito captures the warmth and energy of your brand identity.
+          </p>
+          <p class="jazer-label">Use For:</p>
+          <ul class="jazer-body-sm" style="list-style: none; padding-left: 0; color: var(--text-gray);">
+            <li>• Logo & wordmark (900 weight)</li>
+            <li>• Hero headlines (800-900 weight)</li>
+            <li>• Statistics & big numbers</li>
+            <li>• Eyebrow text & labels</li>
+          </ul>
+        </div>
+
+        <!-- Font 2: Outfit -->
+        <div class="usage-card">
+          <div class="usage-card-header">
+            <span class="usage-icon">🎯</span>
+            <div>
+              <h3 class="jazer-h4">Outfit</h3>
+              <p class="jazer-caption">Secondary Display Font</p>
+            </div>
+          </div>
+          <div style="font-family: var(--font-secondary); font-size: 2rem; margin: 1.5rem 0;">
+            Latest Tracks
+          </div>
+          <p class="jazer-body-sm" style="color: var(--text-gray); margin-bottom: 1rem;">
+            Smooth, rounded, geometric. Complements Nunito perfectly with a slightly more technical edge while maintaining that friendly, modern vibe.
+          </p>
+          <p class="jazer-label">Use For:</p>
+          <ul class="jazer-body-sm" style="list-style: none; padding-left: 0; color: var(--text-gray);">
+            <li>• Section headers (H1-H6)</li>
+            <li>• Navigation links</li>
+            <li>• Button text</li>
+            <li>• Card titles</li>
+          </ul>
+        </div>
+
+        <!-- Font 3: DM Sans -->
+        <div class="usage-card">
+          <div class="usage-card-header">
+            <span class="usage-icon">📝</span>
+            <div>
+              <h3 class="jazer-h4">DM Sans</h3>
+              <p class="jazer-caption">Body & UI Font</p>
+            </div>
+          </div>
+          <div style="font-family: var(--font-body); font-size: 1rem; line-height: 1.6; margin: 1.5rem 0;">
+            This is body text designed for maximum readability with a friendly personality. Perfect for longer content, descriptions, and creating a welcoming vibe.
+          </div>
+          <p class="jazer-body-sm" style="color: var(--text-gray); margin-bottom: 1rem;">
+            Clean, friendly, highly legible. The warmth in this font makes reading feel natural and keeps the bubbly energy flowing.
+          </p>
+          <p class="jazer-label">Use For:</p>
+          <ul class="jazer-body-sm" style="list-style: none; padding-left: 0; color: var(--text-gray);">
+            <li>• Paragraphs & body copy</li>
+            <li>• Form fields & inputs</li>
+            <li>• Captions & labels</li>
+            <li>• Long-form content</li>
+          </ul>
+        </div>
+
+        <!-- Font 4: Poppins (Alternative) -->
+        <div class="usage-card">
+          <div class="usage-card-header">
+            <span class="usage-icon">✨</span>
+            <div>
+              <h3 class="jazer-h4">Poppins</h3>
+              <p class="jazer-caption">Alternative Rounded Option</p>
+            </div>
+          </div>
+          <div style="font-family: var(--font-alt-rounded); font-size: 1.5rem; margin: 1.5rem 0;">
+            Alternative Style
+          </div>
+          <p class="jazer-body-sm" style="color: var(--text-gray); margin-bottom: 1rem;">
+            <strong>Backup option.</strong> Similar rounded geometric style. Use if you want slightly more geometric precision while keeping the friendly vibe.
+          </p>
+          <p class="jazer-label">Good For:</p>
+          <ul class="jazer-body-sm" style="list-style: none; padding-left: 0; color: var(--text-gray);">
+            <li>• Special callouts</li>
+            <li>• Alternate header style</li>
+            <li>• Stats and numbers</li>
+          </ul>
+        </div>
+
+        <!-- Font 5: Rubik (Alternative) -->
+        <div class="usage-card">
+          <div class="usage-card-header">
+            <span class="usage-icon">💎</span>
+            <div>
+              <h3 class="jazer-h4">Rubik</h3>
+              <p class="jazer-caption">Alternative Geometric Option</p>
+            </div>
+          </div>
+          <div style="font-family: var(--font-alt-geometric); font-size: 1.5rem; margin: 1.5rem 0;">
+            Alternative Bold
+          </div>
+          <p class="jazer-body-sm" style="color: var(--text-gray); margin-bottom: 1rem;">
+            <strong>Geometric backup.</strong> Slightly squared corners but still rounded enough. Great for a more technical or structured feel.
+          </p>
+          <p class="jazer-label">Good For:</p>
+          <ul class="jazer-body-sm" style="list-style: none; padding-left: 0; color: var(--text-gray);">
+            <li>• Technical sections</li>
+            <li>• Data displays</li>
+            <li>• Alternative UI text</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 2: TYPOGRAPHY SCALE
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Typography Scale</h2>
+        <p class="jazer-lead">Hierarchy system with responsive sizing</p>
+      </div>
+
+      <!-- Hero -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Hero Display</span>
+          <span class="type-specs">Orbitron 900 / 96-128px / -0.025em</span>
+        </div>
+        <div class="jazer-hero">JAZER</div>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Reserved for homepage hero and major landing pages only. Maximum 1 per page.
+        </p>
+      </div>
+
+      <!-- Display -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Display</span>
+          <span class="type-specs">Orbitron 700 / 48-64px / -0.025em</span>
+        </div>
+        <div class="jazer-display">New Track Dropping</div>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          For major announcements and key moments. Use sparingly for impact.
+        </p>
+      </div>
+
+      <!-- H1 -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Heading 1</span>
+          <span class="type-specs">Space Grotesk 700 / 40-72px / -0.025em</span>
+        </div>
+        <h1 class="jazer-h1">Latest Music & Tracks</h1>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Main page title. One per page. Can use gradient effect for added impact.
+        </p>
+      </div>
+
+      <!-- H2 -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Heading 2</span>
+          <span class="type-specs">Space Grotesk 700 / 32-56px / -0.025em</span>
+        </div>
+        <h2 class="jazer-h2">About the Artist</h2>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Major section headers. Use for primary content divisions.
+        </p>
+      </div>
+
+      <!-- H3 -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Heading 3</span>
+          <span class="type-specs">Space Grotesk 600 / 24-40px / 0</span>
+        </div>
+        <h3 class="jazer-h3">Studio Sessions</h3>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Subsection headers within major sections.
+        </p>
+      </div>
+
+      <!-- H4 -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Heading 4</span>
+          <span class="type-specs">Space Grotesk 600 / 20-30px / 0</span>
+        </div>
+        <h4 class="jazer-h4">Behind the Beats</h4>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Card titles, feature headers, list section headers.
+        </p>
+      </div>
+
+      <!-- Body XL -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Body XL / Lead</span>
+          <span class="type-specs">Inter 400 / 20px / 1.75</span>
+        </div>
+        <p class="jazer-body-xl">
+          This is lead text for introducing sections with important context. Perfect for hero subheadlines and opening paragraphs.
+        </p>
+      </div>
+
+      <!-- Body Large -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Body Large</span>
+          <span class="type-specs">Inter 400 / 18px / 1.75</span>
+        </div>
+        <p class="jazer-body-lg">
+          Slightly larger body text for emphasis or important content blocks. Great for callouts and featured descriptions.
+        </p>
+      </div>
+
+      <!-- Body -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Body</span>
+          <span class="type-specs">Inter 400 / 16px / 1.5</span>
+        </div>
+        <p class="jazer-body">
+          This is standard body text. Use for all general content, paragraphs, descriptions, and longer form reading. Optimized for readability on all screen sizes with perfect line height for extended reading sessions.
+        </p>
+      </div>
+
+      <!-- Body Small -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Body Small</span>
+          <span class="type-specs">Inter 400 / 14px / 1.5</span>
+        </div>
+        <p class="jazer-body-sm">
+          Smaller body text for secondary information, metadata, or less prominent content areas.
+        </p>
+      </div>
+
+      <!-- Caption -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Caption</span>
+          <span class="type-specs">Inter 500 / 12px / 0.025em / UPPERCASE</span>
+        </div>
+        <p class="jazer-caption">
+          Image captions, timestamps, secondary labels
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 3: SPECIALTY ELEMENTS
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Specialty Elements</h2>
+        <p class="jazer-lead">Purpose-built typography for specific use cases</p>
+      </div>
+
+      <!-- Eyebrow -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Eyebrow</span>
+          <span class="type-specs">Orbitron 700 / 12px / 0.1em / UPPERCASE</span>
+        </div>
+        <p class="jazer-eyebrow">New Release</p>
+        <h3 class="jazer-h3" style="margin-top: 0.5rem;">Track Title Here</h3>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Small text above headlines for category, date, or status indicators.
+        </p>
+      </div>
+
+      <!-- Quote -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Quote / Pullquote</span>
+          <span class="type-specs">Space Grotesk 500 / 20-32px / 1.75 / Italic</span>
+        </div>
+        <blockquote class="jazer-quote">
+          "Music has always been the one thing that made me feel truly special."
+        </blockquote>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          For featured quotes, testimonials, or highlighted statements.
+        </p>
+      </div>
+
+      <!-- Label -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Label</span>
+          <span class="type-specs">Inter 600 / 14px / 0.05em / UPPERCASE</span>
+        </div>
+        <p class="jazer-label">Genre</p>
+        <p class="jazer-body" style="margin-top: 0.5rem;">Hip-Hop / Jazz / Electronic</p>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Form labels, field headers, and category tags.
+        </p>
+      </div>
+
+      <!-- Button Text -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Button Text</span>
+          <span class="type-specs">Space Grotesk 600 / 16px / 0.025em / UPPERCASE</span>
+        </div>
+        <button style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #ff00ff 100%); border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer;">
+          <span class="jazer-button-text">Listen Now</span>
+        </button>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          All button and CTA text. Bold, uppercase, high contrast.
+        </p>
+      </div>
+
+      <!-- Navigation Link -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Navigation Link</span>
+          <span class="type-specs">Space Grotesk 500 / 16px / 0</span>
+        </div>
+        <nav style="display: flex; gap: 2rem;">
+          <a href="#" class="jazer-nav-link" style="color: var(--text-light); text-decoration: none;">Home</a>
+          <a href="#" class="jazer-nav-link" style="color: var(--text-light); text-decoration: none;">Music</a>
+          <a href="#" class="jazer-nav-link" style="color: var(--text-light); text-decoration: none;">About</a>
+          <a href="#" class="jazer-nav-link" style="color: var(--text-light); text-decoration: none;">Contact</a>
+        </nav>
+        <p class="jazer-body-sm" style="margin-top: 1rem; color: var(--text-gray);">
+          Navigation menu items. Clean, medium weight, scannable.
+        </p>
+      </div>
+
+      <!-- Statistics -->
+      <div class="type-demo">
+        <div class="type-demo-header">
+          <span class="type-name">Statistics Display</span>
+          <span class="type-specs">Orbitron 900 / 48-96px / -0.025em + Inter 500 / 14px</span>
+        </div>
+        <div style="text-align: center;">
+          <div class="jazer-stat-number">10K+</div>
+          <div class="jazer-stat-label">Monthly Listeners</div>
+        </div>
+        <p class="jazer-body-sm" style="margin-top: 1.5rem; color: var(--text-gray);">
+          Large numbers with descriptive labels. Perfect for metrics and achievements.
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 4: USAGE GUIDELINES
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Usage Guidelines</h2>
+        <p class="jazer-lead">When and how to use each typeface</p>
+      </div>
+
+      <h3 class="jazer-h3" style="margin-bottom: 2rem;">Font Selection Decision Tree</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Content Type</th>
+            <th>Font Choice</th>
+            <th>Class to Use</th>
+            <th>Example Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Logo / Wordmark</td>
+            <td>Nunito</td>
+            <td><code>.jazer-logo</code></td>
+            <td>Site header, footer, watermarks</td>
+          </tr>
+          <tr>
+            <td>Hero Headline</td>
+            <td>Nunito</td>
+            <td><code>.jazer-hero</code></td>
+            <td>Homepage main headline</td>
+          </tr>
+          <tr>
+            <td>Major Announcement</td>
+            <td>Nunito</td>
+            <td><code>.jazer-display</code></td>
+            <td>"New Album Out Now"</td>
+          </tr>
+          <tr>
+            <td>Page Title</td>
+            <td>Space Grotesk</td>
+            <td><code>.jazer-h1</code></td>
+            <td>"Latest Tracks", "About Me"</td>
+          </tr>
+          <tr>
+            <td>Section Header</td>
+            <td>Space Grotesk</td>
+            <td><code>.jazer-h2</code></td>
+            <td>"Featured Work", "Discography"</td>
+          </tr>
+          <tr>
+            <td>Subsection</td>
+            <td>Space Grotesk</td>
+            <td><code>.jazer-h3</code></td>
+            <td>"Recent Releases", "2024 Singles"</td>
+          </tr>
+          <tr>
+            <td>Card/Box Title</td>
+            <td>Space Grotesk</td>
+            <td><code>.jazer-h4</code></td>
+            <td>Track names, blog titles</td>
+          </tr>
+          <tr>
+            <td>Body Copy</td>
+            <td>Inter</td>
+            <td><code>.jazer-body</code></td>
+            <td>Paragraphs, descriptions</td>
+          </tr>
+          <tr>
+            <td>Introduction Text</td>
+            <td>Inter</td>
+            <td><code>.jazer-lead</code></td>
+            <td>Hero subheadline, section intros</td>
+          </tr>
+          <tr>
+            <td>Form Fields</td>
+            <td>Inter</td>
+            <td><code>.jazer-body</code></td>
+            <td>Input text, dropdowns</td>
+          </tr>
+          <tr>
+            <td>Form Labels</td>
+            <td>Inter</td>
+            <td><code>.jazer-label</code></td>
+            <td>"Email Address", "Message"</td>
+          </tr>
+          <tr>
+            <td>Buttons</td>
+            <td>Space Grotesk</td>
+            <td><code>.jazer-button-text</code></td>
+            <td>"Listen Now", "Contact Me"</td>
+          </tr>
+          <tr>
+            <td>Navigation</td>
+            <td>Space Grotesk</td>
+            <td><code>.jazer-nav-link</code></td>
+            <td>Header menu, footer links</td>
+          </tr>
+          <tr>
+            <td>Category Tags</td>
+            <td>Nunito</td>
+            <td><code>.jazer-eyebrow</code></td>
+            <td>"NEW", "FEATURED", "LIVE"</td>
+          </tr>
+          <tr>
+            <td>Statistics</td>
+            <td>Nunito + DM Sans</td>
+            <td><code>.jazer-stat-*</code></td>
+            <td>"10K Streams", "50+ Tracks"</td>
+          </tr>
+          <tr>
+            <td>Quotes</td>
+            <td>Space Grotesk</td>
+            <td><code>.jazer-quote</code></td>
+            <td>Testimonials, pull quotes</td>
+          </tr>
+          <tr>
+            <td>Metadata</td>
+            <td>Inter</td>
+            <td><code>.jazer-caption</code></td>
+            <td>Dates, timestamps, credits</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================
+         SECTION 5: DO'S AND DON'TS
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Do's and Don'ts</h2>
+        <p class="jazer-lead">Best practices for maintaining brand consistency</p>
+      </div>
+
+      <div class="do-dont-grid">
+        <div class="do-card">
+          <h4>✅ DO</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 1rem;">• Use Nunito at 800-900 weights for brand impact</li>
+            <li style="margin-bottom: 1rem;">• Apply gradient effects to Nunito headlines</li>
+            <li style="margin-bottom: 1rem;">• Use Outfit for all headers and navigation</li>
+            <li style="margin-bottom: 1rem;">• Use DM Sans for all body copy and forms</li>
+            <li style="margin-bottom: 1rem;">• Maintain consistent letter spacing</li>
+            <li style="margin-bottom: 1rem;">• Use uppercase for Nunito display text</li>
+            <li style="margin-bottom: 1rem;">• Ensure proper contrast on dark backgrounds</li>
+            <li style="margin-bottom: 1rem;">• Keep Nunito for short, impactful statements</li>
+          </ul>
+        </div>
+
+        <div class="dont-card">
+          <h4>❌ DON'T</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 1rem;">• Use Nunito for body text or long paragraphs</li>
+            <li style="margin-bottom: 1rem;">• Mix more than 3 font families</li>
+            <li style="margin-bottom: 1rem;">• Use thin weights (below 600) for Nunito headlines</li>
+            <li style="margin-bottom: 1rem;">• Stretch, squish, or distort any typography</li>
+            <li style="margin-bottom: 1rem;">• Use Nunito for more than one sentence at a time</li>
+            <li style="margin-bottom: 1rem;">• Apply gradient to body text</li>
+            <li style="margin-bottom: 1rem;">• Use all-caps for body copy</li>
+            <li style="margin-bottom: 1rem;">• Ignore responsive font sizing</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="jazer-h3" style="margin: 4rem 0 2rem;">Typography Hierarchy Rules</h3>
+
+      <div class="usage-grid">
+        <div class="usage-card">
+          <h4 class="jazer-h4" style="margin-bottom: 1rem;">Maximum Usage</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 0.75rem;">• <strong>1 Hero</strong> per page maximum</li>
+            <li style="margin-bottom: 0.75rem;">• <strong>1 H1</strong> per page</li>
+            <li style="margin-bottom: 0.75rem;">• <strong>2-3 Display</strong> headers per page</li>
+            <li style="margin-bottom: 0.75rem;">• <strong>Multiple H2-H6</strong> as needed</li>
+          </ul>
+        </div>
+
+        <div class="usage-card">
+          <h4 class="jazer-h4" style="margin-bottom: 1rem;">Minimum Sizes</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 0.75rem;">• Body text: <strong>16px minimum</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Captions: <strong>12px minimum</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Button text: <strong>14px minimum</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Touch targets: <strong>44px minimum</strong></li>
+          </ul>
+        </div>
+
+        <div class="usage-card">
+          <h4 class="jazer-h4" style="margin-bottom: 1rem;">Line Length</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 0.75rem;">• Body text: <strong>45-75 characters</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Headlines: <strong>max 40 characters</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Captions: <strong>max 60 characters</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Use max-width: <strong>65ch for paragraphs</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 6: IMPLEMENTATION CODE
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Implementation Code</h2>
+        <p class="jazer-lead">Ready-to-use CSS for your website</p>
+      </div>
+
+      <h3 class="jazer-h3" style="margin-bottom: 1.5rem;">Step 1: Import Fonts</h3>
+      <p class="jazer-body" style="margin-bottom: 1rem;">Add this to your HTML <code>&lt;head&gt;</code>:</p>
+      
+      <div class="code-block">
+        <pre>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet"&gt;</pre>
+      </div>
+
+      <h3 class="jazer-h3" style="margin: 3rem 0 1.5rem;">Step 2: Copy CSS Variables</h3>
+      <p class="jazer-body" style="margin-bottom: 1rem;">Add this to your main stylesheet:</p>
+      
+      <div class="code-block">
+        <pre>:root {
+  /* Brand Fonts - MATCHING YOUR ACTUAL LOGO */
+  --font-primary: 'Nunito', sans-serif;
+  --font-secondary: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  
+  /* Alternative Options */
+  --font-alt-rounded: 'Poppins', sans-serif;
+  --font-alt-geometric: 'Rubik', sans-serif;
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+  
+  /* Letter Spacing */
+  --tracking-tight: 0;
+  --tracking-normal: 0.01em;
+  --tracking-wide: 0.03em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* Gradients - PLAYFUL */
+  --gradient-text: linear-gradient(135deg, #00f2fe 0%, #ff006e 50%, #ffbe0b 100%);
+}</pre>
+      </div>
+
+      <h3 class="jazer-h3" style="margin: 3rem 0 1.5rem;">Step 3: Apply Typography Classes</h3>
+      <p class="jazer-body" style="margin-bottom: 1rem;">Copy the complete class system from the <code>&lt;style&gt;</code> section of this document, or use individual classes as needed.</p>
+
+      <h3 class="jazer-h3" style="margin: 3rem 0 1.5rem;">Quick Reference</h3>
+      
+      <div class="code-block">
+        <pre>&lt;!-- Logo / Branding --&gt;
+&lt;div class="jazer-logo"&gt;JAZER&lt;/div&gt;
+
+&lt;!-- Hero Headline --&gt;
+&lt;h1 class="jazer-hero"&gt;New Album Out Now&lt;/h1&gt;
+
+&lt;!-- Page Title --&gt;
+&lt;h1 class="jazer-h1"&gt;Latest Tracks&lt;/h1&gt;
+
+&lt;!-- Section Header --&gt;
+&lt;h2 class="jazer-h2"&gt;About the Music&lt;/h2&gt;
+
+&lt;!-- Body Text --&gt;
+&lt;p class="jazer-body"&gt;Your content here...&lt;/p&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+&lt;p class="jazer-lead"&gt;Introduction text...&lt;/p&gt;
+
+&lt;!-- Button --&gt;
+&lt;button&gt;
+  &lt;span class="jazer-button-text"&gt;Listen Now&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Statistics --&gt;
+&lt;div&gt;
+  &lt;div class="jazer-stat-number"&gt;10K+&lt;/div&gt;
+  &lt;div class="jazer-stat-label"&gt;Streams&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Eyebrow Text --&gt;
+&lt;p class="jazer-eyebrow"&gt;New Release&lt;/p&gt;</pre>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 7: RESPONSIVE BEHAVIOR
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Responsive Typography</h2>
+        <p class="jazer-lead">How fonts scale across devices</p>
+      </div>
+
+      <h3 class="jazer-h3" style="margin-bottom: 2rem;">Breakpoint Strategy</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Mobile (320-767px)</th>
+            <th>Tablet (768-1023px)</th>
+            <th>Desktop (1024px+)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hero</td>
+            <td>48px</td>
+            <td>72px</td>
+            <td>96-128px</td>
+          </tr>
+          <tr>
+            <td>Display</td>
+            <td>32px</td>
+            <td>48px</td>
+            <td>64px</td>
+          </tr>
+          <tr>
+            <td>H1</td>
+            <td>40px</td>
+            <td>56px</td>
+            <td>72px</td>
+          </tr>
+          <tr>
+            <td>H2</td>
+            <td>32px</td>
+            <td>42px</td>
+            <td>56px</td>
+          </tr>
+          <tr>
+            <td>H3</td>
+            <td>24px</td>
+            <td>32px</td>
+            <td>40px</td>
+          </tr>
+          <tr>
+            <td>H4</td>
+            <td>20px</td>
+            <td>24px</td>
+            <td>30px</td>
+          </tr>
+          <tr>
+            <td>Body</td>
+            <td>16px</td>
+            <td>16px</td>
+            <td>16-18px</td>
+          </tr>
+          <tr>
+            <td>Caption</td>
+            <td>12px</td>
+            <td>12px</td>
+            <td>12px</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="jazer-h3" style="margin: 3rem 0 1.5rem;">Using Clamp for Fluid Typography</h3>
+      <p class="jazer-body" style="margin-bottom: 1rem;">All heading classes use <code>clamp()</code> for smooth scaling:</p>
+
+      <div class="code-block">
+        <pre>/* Fluid scaling between min and max */
+.jazer-h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  /* Min: 40px, Scales: 6% of viewport, Max: 72px */
+}
+
+.jazer-h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  /* Min: 32px, Scales: 5% of viewport, Max: 56px */
+}</pre>
+      </div>
+
+      <h3 class="jazer-h3" style="margin: 3rem 0 1.5rem;">Mobile-Specific Adjustments</h3>
+
+      <div class="code-block">
+        <pre>@media (max-width: 768px) {
+  /* Reduce letter spacing on mobile */
+  .jazer-hero,
+  .jazer-display {
+    letter-spacing: var(--tracking-normal);
+  }
+  
+  /* Increase line height for better readability */
+  .jazer-body {
+    line-height: var(--leading-relaxed);
+  }
+  
+  /* Adjust stat sizing */
+  .jazer-stat-number {
+    font-size: clamp(2rem, 12vw, 4rem);
+  }
+}</pre>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 8: ACCESSIBILITY
+         ============================================ -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="jazer-h2">Accessibility Guidelines</h2>
+        <p class="jazer-lead">Ensuring readable, inclusive typography</p>
+      </div>
+
+      <div class="usage-grid">
+        <div class="usage-card">
+          <h4 class="jazer-h4" style="margin-bottom: 1rem;">✅ Contrast Ratios</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 0.75rem;">• Body text: <strong>7:1 minimum</strong> (AAA)</li>
+            <li style="margin-bottom: 0.75rem;">• Large text (18px+): <strong>4.5:1 minimum</strong> (AA)</li>
+            <li style="margin-bottom: 0.75rem;">• White on black: <strong>21:1</strong> ✓</li>
+            <li style="margin-bottom: 0.75rem;">• Cyan (#00f2fe) on black: <strong>12.5:1</strong> ✓</li>
+          </ul>
+        </div>
+
+        <div class="usage-card">
+          <h4 class="jazer-h4" style="margin-bottom: 1rem;">📖 Readability</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 0.75rem;">• Body text: <strong>16px minimum</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Line height: <strong>1.5-1.75</strong> for body</li>
+            <li style="margin-bottom: 0.75rem;">• Line length: <strong>45-75 characters</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Paragraph spacing: <strong>1.5em</strong></li>
+          </ul>
+        </div>
+
+        <div class="usage-card">
+          <h4 class="jazer-h4" style="margin-bottom: 1rem;">⌨️ User Control</h4>
+          <ul class="jazer-body-sm" style="list-style: none; padding: 0; color: var(--text-gray);">
+            <li style="margin-bottom: 0.75rem;">• Allow browser zoom up to <strong>200%</strong></li>
+            <li style="margin-bottom: 0.75rem;">• Use relative units (<strong>rem, em</strong>)</li>
+            <li style="margin-bottom: 0.75rem;">• Don't disable text selection</li>
+            <li style="margin-bottom: 0.75rem;">• Support system font scaling</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="jazer-h3" style="margin: 3rem 0 1.5rem;">Semantic HTML Structure</h3>
+
+      <div class="code-block">
+        <pre>&lt;!-- ✅ Correct: Maintain proper heading hierarchy --&gt;
+&lt;h1 class="jazer-h1"&gt;Page Title&lt;/h1&gt;
+  &lt;h2 class="jazer-h2"&gt;Section 1&lt;/h2&gt;
+    &lt;h3 class="jazer-h3"&gt;Subsection 1.1&lt;/h3&gt;
+    &lt;h3 class="jazer-h3"&gt;Subsection 1.2&lt;/h3&gt;
+  &lt;h2 class="jazer-h2"&gt;Section 2&lt;/h2&gt;
+
+&lt;!-- ❌ Wrong: Skipping heading levels --&gt;
+&lt;h1&gt;Page Title&lt;/h1&gt;
+  &lt;h4&gt;Subsection&lt;/h4&gt;  &lt;!-- Skipped h2 and h3 --&gt;</pre>
+      </div>
+    </div>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <div style="text-align: center; margin: 6rem 0 4rem; padding-top: 3rem; border-top: 1px solid rgba(255, 0, 110, 0.2);">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">✨🎵💫</div>
+      <div class="jazer-logo" style="margin-bottom: 1rem;">JAZER</div>
+      <p class="jazer-body-sm" style="color: var(--text-gray);">
+        Typography Brand Package v1.0<br/>
+        Bubbly Futuristic Edition ✨
+      </p>
+      <p class="jazer-caption" style="margin-top: 2rem;">
+        © 2025 JaZeR Brand Guidelines
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

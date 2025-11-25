@@ -1,0 +1,30 @@
+functionsDirectory = "C:\\ACTIVE PROJECTS\\JaZeR-Unlimited\\netlify\\functions"
+functionsDirectoryOrigin = "ui"
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\ACTIVE PROJECTS\\JaZeR-Unlimited"
+publishOrigin = "default"
+commandOrigin = "ui"
+command = "# no build command"
+functions = "C:\\ACTIVE PROJECTS\\JaZeR-Unlimited\\netlify\\functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
