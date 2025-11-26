@@ -68,6 +68,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Delay slightly to ensure focus works
     setTimeout(() => navigateTo(initial),0);
 
+    // Apply initial brand color (first in the cycle)
+    applyBrandColors(jazerBrandColors[currentColorIndex]);
+
+    // Add event listener to logo for color cycling
+    const logoElement = document.querySelector('.logo');
+    if (logoElement) {
+        logoElement.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            cycleBrandColors();
+        });
+    }
+
+
     // Enhanced form submission handler with Formspree
     const form = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
@@ -157,17 +170,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Theme Color Cycling (JaZeR Brand Colors) ---
+    // Define the array of JaZeR brand colors for cycling
+    const jazerBrandColors = [
+        '#9333ea', // jazer-purple
+        '#ff00ff', // jazer-magenta
+        '#00f2ea', // jazer-cyan
+        '#ff8800', // jazer-orange
+        '#22c55e', // jazer-green
+        '#4facfe'  // jazer-blue-mid
+    ];
+    let currentColorIndex = 0; // Tracks the currently active color in the cycle
+
+    // Helper to get a secondary color based on a primary hex value.
+    // This provides a consistent companion color for gradients or accents.
+    function getSecondaryColor(primaryHex) {
+        // Simple mapping to predefined secondary/accent colors from style.css
+        // In a more complex system, this might involve color manipulation libraries
+        switch(primaryHex) {
+            case '#9333ea': return '#8B5CF6'; // Electric Purple (matches default primary)
+            case '#ff00ff': return '#EC4899'; // Neon Pink (matches accent-color)
+            case '#00f2ea': return '#06B6D4'; // Icon Cyan
+            case '#ff8800': return '#F59E0B'; // Icon Orange
+            case '#22c55e': return '#10B981'; // Icon Green
+            case '#4facfe': return '#3B82F6'; // Cosmic Blue (matches default secondary)
+            default: return lightenHex(primaryHex, 0.25); // Fallback to lighter version
+        }
+    }
+
+    // Applies the given primary color and a derived secondary color to CSS variables.
+    // Also updates the CTA button's box-shadow for visual feedback.
     function applyBrandColors(primaryHex) {
         const root = document.documentElement;
-        const secondary = lightenHex(primaryHex,0.25);
+        const secondaryHex = getSecondaryColor(primaryHex); // Get a consistent secondary color
         root.style.setProperty('--primary-color', primaryHex);
-        root.style.setProperty('--secondary-color', secondary);
-        // small visual feedback: update CTA outline
+        root.style.setProperty('--secondary-color', secondaryHex);
+        // Update CTA button's box-shadow to reflect the new primary color
         const cta = document.querySelector('.cta-button');
         if (cta) {
             cta.style.boxShadow = `0 8px 24px ${primaryHex}33`;
         }
     }
+
+    // Cycles through the `jazerBrandColors` array and applies the next color.
+    function cycleBrandColors() {
+        currentColorIndex = (currentColorIndex + 1) % jazerBrandColors.length;
+        const newColor = jazerBrandColors[currentColorIndex];
+        applyBrandColors(newColor);
+    }
+
+    // --- Initialization and Event Listeners for Color Cycling ---
+
+    // Apply the initial brand color (first in the cycle) when the page loads.
+    applyBrandColors(jazerBrandColors[currentColorIndex]);
+
+    // Add event listener to the main logo to trigger color cycling on click.
+    const logoElement = document.querySelector('.logo');
+    if (logoElement) {
+        logoElement.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            cycleBrandColors(); // Cycle to the next brand color
+        });
+    }
+
+
 
     function initBrandGallery() {
         const items = document.querySelectorAll('.gallery-item');

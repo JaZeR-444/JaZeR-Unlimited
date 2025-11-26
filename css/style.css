@@ -1,30 +1,68 @@
 /* Root variables and theme */
 :root {
-    --primary-color: #8B5CF6;
-    /* Electric Purple */
-    --secondary-color: #3B82F6;
-    /* Cosmic Blue */
-    --accent-color: #EC4899;
-    /* Neon Pink */
-    --dark-bg: #0B0E12;
-    /* Night Black */
-    --card-bg: #1F2937;
-    /* Graphite */
-    --text-primary: #F8F9FF;
-    /* Stardust White */
-    --text-secondary: #94A3B8;
-    /* Soft Slate */
-    --max-width: 1100px;
-
-    /* JaZeR brand color variables */
+    /* Brand Fonts - MATCHING YOUR ACTUAL LOGO */
+    --font-primary: 'Nunito', sans-serif;          /* Logo, Hero - Matches your logo! */
+    --font-secondary: 'Outfit', sans-serif;        /* Headers, Titles - Rounded & Modern */
+    --font-body: 'DM Sans', sans-serif;            /* Body, UI - Friendly & Readable */
+    
+    /* Alternative Font Options */
+    --font-alt-rounded: 'Poppins', sans-serif;     /* Alternative rounded option */
+    --font-alt-geometric: 'Rubik', sans-serif;     /* Alternative geometric option */
+    
+    /* Brand Colors - VIBRANT PALETTE */
     --jazer-blue-light: #00f2fe;
     --jazer-blue-mid: #4facfe;
     --jazer-purple: #9333ea;
     --jazer-magenta: #ff00ff;
     --jazer-cyan: #00f2ea;
+    --jazer-pink: #ff006e; /* NEW */
+    --jazer-yellow: #ffbe0b; /* NEW */
     --jazer-orange: #ff8800;
-    --jazer-green: #22c55e;
+    
+    /* Gradients - PLAYFUL */
+    --gradient-primary: linear-gradient(135deg, #ffbe0b 0%, #ff006e 50%, #ff00ff 100%);
+    --gradient-text: linear-gradient(135deg, #00f2fe 0%, #ff006e 50%, #ffbe0b 100%);
+    --gradient-accent: linear-gradient(135deg, #9333ea 0%, #ff00ff 100%);
+    
+    /* Backgrounds */
+    --bg-dark: #000000;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-bubble: rgba(255, 0, 110, 0.1);
+    --text-light: #ffffff;
+    --text-gray: #b0b0b0;
+    --text-muted: #808080;
+    
+    /* Typography Scale - Mobile First */
+    --text-xs: 0.75rem;      /* 12px */
+    --text-sm: 0.875rem;     /* 14px */
+    --text-base: 1rem;       /* 16px */
+    --text-lg: 1.125rem;     /* 18px */
+    --text-xl: 1.25rem;      /* 20px */
+    --text-2xl: 1.5rem;      /* 24px */
+    --text-3xl: 1.875rem;    /* 30px */
+    --text-4xl: 2.25rem;     /* 36px */
+    --text-5xl: 3rem;        /* 48px */
+    --text-6xl: 3.75rem;     /* 60px */
+    --text-7xl: 4.5rem;      /* 72px */
+    --text-8xl: 6rem;        /* 96px */
+    
+    /* Line Heights - MORE BREATHING ROOM */
+    --leading-tight: 1.2;
+    --leading-snug: 1.35;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.8;
+    --leading-loose: 2;
+    
+    /* Letter Spacing - WIDER FOR FRIENDLINESS */
+    --tracking-tighter: -0.025em;
+    --tracking-tight: 0;
+    --tracking-normal: 0.01em;
+    --tracking-wide: 0.03em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
 
+    /* Site specific variables */
+    --max-width: 1100px;
     /* Icon color variables */
     --icon-purple: #8B5CF6;
     --icon-blue: #3B82F6;
@@ -46,10 +84,12 @@ body {
 
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--dark-bg);
-    color: var(--text-primary);
-    line-height: 1.4;
+    background: var(--bg-dark); /* Updated from --dark-bg */
+    color: var(--text-light);   /* Updated from --text-primary */
+    font-family: var(--font-body); /* Updated from Montserrat */
+    font-size: var(--text-base); /* Added from brand package */
+    line-height: var(--leading-normal); /* Updated from 1.4 */
+    padding: 0; /* Changed from 2rem to avoid initial layout shift; adjust if needed */
 }
 
 a {
@@ -85,47 +125,218 @@ a {
 }
 
 /* Typography Classes */
-.jazer-h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0;
-}
 
-.jazer-h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 0;
-}
+    /* TIER 1: BRAND IMPACT (Nunito - Matches Your Logo!) */
+    
+    .jazer-hero {
+      font-family: var(--font-primary);
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-normal);
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+    }
 
-.jazer-h3 {
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    font-weight: 600;
-    line-height: 1.4;
-    margin: 0;
-}
+    .jazer-logo-text { /* Renamed from .jazer-logo to avoid conflict with .logo selector */
+      font-family: var(--font-primary);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: var(--tracking-wide);
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+    }
 
-.jazer-body {
-    font-size: 1rem;
-    line-height: 1.6;
-}
+    .jazer-display {
+      font-family: var(--font-primary);
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-normal);
+      text-transform: uppercase;
+    }
 
-.jazer-body-sm {
-    font-size: 0.875rem;
-    line-height: 1.5;
-}
+    /* TIER 2: SECTION HEADERS (Outfit - Smooth, Rounded, Modern) */
+    
+    .jazer-h1 {
+      font-family: var(--font-secondary);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+    }
 
-.jazer-lead {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    font-weight: 500;
-}
+    .jazer-h2 {
+      font-family: var(--font-secondary);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-normal);
+      color: var(--primary-color); /* Retain existing color and transition */
+      transition: color 0.5s ease-in-out; /* Retain existing color and transition */
+    }
 
-.jazer-caption {
-    font-size: 0.875rem;
-    line-height: 1.4;
-}
+    .jazer-h3 {
+      font-family: var(--font-secondary);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-h4 {
+      font-family: var(--font-secondary);
+      font-size: clamp(1.25rem, 2vw, 1.875rem);
+      font-weight: 600;
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-h5 {
+      font-family: var(--font-secondary);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-h6 {
+      font-family: var(--font-secondary);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+    }
+
+    /* TIER 3: BODY & UI (DM Sans - Friendly & Readable) */
+    
+    .jazer-body-xl {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-body-lg {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 400;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-body-sm {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 400;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-caption {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* TIER 4: SPECIALTY CLASSES */
+    
+    .jazer-lead {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+      color: var(--text-gray);
+    }
+
+    .jazer-quote {
+      font-family: var(--font-secondary);
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 500;
+      line-height: var(--leading-relaxed);
+      letter-spacing: var(--tracking-normal);
+      font-style: italic;
+    }
+
+    .jazer-label {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--jazer-pink);
+    }
+
+    .jazer-button-text {
+      font-family: var(--font-secondary);
+      font-size: var(--text-base);
+      font-weight: 700;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+    }
+
+    .jazer-nav-link {
+      font-family: var(--font-secondary);
+      font-size: var(--text-base);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+    }
+
+    .jazer-eyebrow {
+      font-family: var(--font-primary);
+      font-size: var(--text-xs);
+      font-weight: 900;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--jazer-yellow);
+    }
+
+    .jazer-stat-number {
+      font-family: var(--font-primary);
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-normal);
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .jazer-stat-label {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--text-gray);
+    }
 
 /* Navigation */
 .site-nav {
@@ -148,6 +359,10 @@ a {
     height: 28px;
     width: auto;
     display: block;
+    /* Added dynamic glow effect based on --primary-color */
+    filter: drop-shadow(0 0 8px var(--primary-color));
+    /* Smooth transition for the glow effect */
+    transition: filter 0.5s ease-in-out;
 }
 
 .nav-links {
@@ -723,3 +938,24 @@ button.gallery-item {
         font-size: 3em;
     }
 }
+
+/* ============================================
+   UTILITY CLASSES (from jazer-typography-brand-package.html)
+   ============================================ */
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(79, 172, 254, 0.6),
+               0 0 40px rgba(79, 172, 254, 0.4);
+}
+
+.text-uppercase { text-transform: uppercase; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
