@@ -9,9 +9,14 @@ This is the private repo for the JaZeR site. It’s a static single-page app (pl
 - `css/` — styles, brand tokens in `style.css`
 - `js/` — navigation, contact form handling, brand color picker
 - `images/` — logo, artwork, favicon
-- `robots/robots.txt` — allow all + sitemap
-- `sitemap/sitemap.xml` — minimal sitemap
+- `robots.txt` — search engine instructions (root level)
+- `sitemap.xml` — site structure for SEO (root level)
+- `robots/` & `sitemap/` — original subdirectories (kept)
 - `README/` — original notes (kept)
+- `QUICKSTART.md` — 3-step deployment guide
+- `GITHUB_PAGES_DEPLOYMENT.md` — comprehensive deployment guide
+- `deploy-gh-pages.sh` — deployment helper script
+- `verify-site.sh` — site structure verification
 
 ## Brand
 Palette and tokens aligned to:
@@ -26,8 +31,34 @@ Palette and tokens aligned to:
 ## Local Preview
 Open `index.html` directly in your browser, or use a simple static server (recommended for hash routing).
 
-## Deploy (later)
-Canonical domain set to https://jazeratx.com. When ready, deploy to Cloudflare Pages, Vercel, Netlify, or GitHub Pages. Update `og:image` to a dedicated share image (1200x630) when final.
+## Deploy to GitHub Pages
+
+This repository is configured for GitHub Pages deployment.
+
+📖 **Quick Start**: See [QUICKSTART.md](QUICKSTART.md) for 3-step deployment  
+📖 **Detailed Guide**: See [GITHUB_PAGES_DEPLOYMENT.md](GITHUB_PAGES_DEPLOYMENT.md)
+
+### Quick Deploy
+
+1. **Create gh-pages branch:**
+   ```bash
+   ./deploy-gh-pages.sh
+   ```
+
+2. **Enable in GitHub:**
+   Settings → Pages → Source: gh-pages branch
+
+3. **Verify Site:**
+   ```bash
+   ./verify-site.sh
+   ```
+
+### Deployment Options
+- **GitHub Pages** (default): `https://jazer-444.github.io/JaZeR-Unlimited/`
+- **Custom Domain**: Configure https://jazeratx.com (see guides)
+- **Alternative Platforms**: Cloudflare Pages, Vercel, Netlify
+
+Update `og:image` to a dedicated share image (1200x630) when final.
 
 ## Git Quickstart (Private Repo)
 1. Create a new private repository on GitHub (no README, no .gitignore).
