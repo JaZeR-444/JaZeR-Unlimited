@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JaZeR Icon & Emoji System</title>
+  <style>
+    /* ============================================
+       JAZER ICON & EMOJI SYSTEM
+       Complete styling for social icons and custom emojis
+       ============================================ */
+
+    :root {
+      /* Brand Colors */
+      --jazer-blue-light: #00f2fe;
+      --jazer-blue-mid: #4facfe;
+      --jazer-purple: #9333ea;
+      --jazer-magenta: #ff00ff;
+      --jazer-cyan: #00f2ea;
+      --jazer-orange: #ff8800;
+      --jazer-green: #22c55e;
+      
+      /* Theme Colors */
+      --bg-dark: #000000;
+      --text-light: #ffffff;
+      --text-gray: #b0b0b0;
+      --border-light: rgba(255, 255, 255, 0.1);
+      --bg-card: rgba(255, 255, 255, 0.05);
+    }
+
+    /* ============================================
+       SOCIAL MEDIA ICONS
+       ============================================ */
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Gradient Overlay Effect */
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, 
+        rgba(0, 242, 254, 0.2) 0%, 
+        rgba(79, 172, 254, 0.2) 50%, 
+        rgba(255, 0, 255, 0.2) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .social-link:hover::before {
+      opacity: 1;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      border-color: rgba(79, 172, 254, 0.6);
+      box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+    }
+
+    .social-link:hover .social-icon {
+      color: var(--jazer-blue-mid);
+      transform: scale(1.1);
+    }
+
+    /* Individual Platform Brand Colors (Optional) */
+    .social-link.x-twitter:hover .social-icon { color: #ffffff; }
+    .social-link.instagram:hover .social-icon { color: #E4405F; }
+    .social-link.tiktok:hover .social-icon { color: var(--jazer-cyan); }
+    .social-link.youtube:hover .social-icon { color: #FF0000; }
+    .social-link.soundcloud:hover .social-icon { color: var(--jazer-orange); }
+    .social-link.facebook:hover .social-icon { color: #1877F2; }
+    .social-link.spotify:hover .social-icon { color: #1DB954; }
+
+    /* ============================================
+       CUSTOM EMOJI SYSTEM
+       ============================================ */
+
+    .custom-emoji {
+      display: inline-block;
+      font-size: 1.2em;
+      line-height: 1;
+      vertical-align: middle;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Interactive Hover Effect */
+    .custom-emoji.interactive {
+      cursor: pointer;
+    }
+
+    .custom-emoji.interactive:hover {
+      transform: scale(1.15) rotate(-5deg);
+      filter: drop-shadow(0 4px 8px rgba(79, 172, 254, 0.5));
+    }
+
+    /* Category-Specific Styling with Colored Glows */
+
+    /* Music & Audio - Blue Glow */
+    .emoji-music {
+      filter: drop-shadow(0 0 8px rgba(79, 172, 254, 0.4));
+    }
+
+    .emoji-music:hover {
+      filter: drop-shadow(0 0 12px rgba(79, 172, 254, 0.7));
+      transform: scale(1.2);
+    }
+
+    /* Studio & Production - Purple Glow */
+    .emoji-studio {
+      filter: drop-shadow(0 0 8px rgba(147, 51, 234, 0.4));
+    }
+
+    .emoji-studio:hover {
+      filter: drop-shadow(0 0 12px rgba(147, 51, 234, 0.7));
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    /* Content Creation - Cyan Glow */
+    .emoji-content {
+      filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));
+    }
+
+    .emoji-content:hover {
+      filter: drop-shadow(0 0 12px rgba(0, 242, 254, 0.7));
+      transform: scale(1.2);
+    }
+
+    /* Studio Life & Grind - Orange/Warm Glow */
+    .emoji-vibe {
+      filter: drop-shadow(0 0 8px rgba(255, 136, 0, 0.4));
+    }
+
+    .emoji-vibe:hover {
+      filter: drop-shadow(0 0 12px rgba(255, 136, 0, 0.7));
+      transform: scale(1.2);
+    }
+
+    /* Business & Organization - Green/Success Glow */
+    .emoji-business {
+      filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4));
+    }
+
+    .emoji-business:hover {
+      filter: drop-shadow(0 0 12px rgba(34, 197, 94, 0.7));
+      transform: scale(1.2);
+    }
+
+    /* Communication & Reactions - Pink/Magenta Glow */
+    .emoji-social {
+      filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.4));
+    }
+
+    .emoji-social:hover {
+      filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.7));
+      transform: scale(1.2);
+    }
+
+    /* Design Accents - Gradient Glow */
+    .emoji-accent {
+      filter: drop-shadow(0 0 8px rgba(79, 172, 254, 0.3)) 
+              drop-shadow(0 0 8px rgba(255, 0, 255, 0.3));
+    }
+
+    .emoji-accent:hover {
+      filter: drop-shadow(0 0 12px rgba(79, 172, 254, 0.6)) 
+              drop-shadow(0 0 12px rgba(255, 0, 255, 0.6));
+      transform: scale(1.3) rotate(180deg);
+    }
+
+    /* ============================================
+       EMOJI SIZE VARIATIONS
+       ============================================ */
+
+    .emoji-sm { font-size: 1em; }
+    .emoji-md { font-size: 1.5em; }
+    .emoji-lg { font-size: 2em; }
+    .emoji-xl { font-size: 3em; }
+
+    /* ============================================
+       EMOJI ANIMATIONS
+       ============================================ */
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(79, 172, 254, 0.4));
+      }
+      50% {
+        filter: drop-shadow(0 0 16px rgba(79, 172, 254, 0.8));
+      }
+    }
+
+    @keyframes bounce-subtle {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes rotate-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .emoji-animated-pulse {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .emoji-animated-bounce {
+      animation: bounce-subtle 1.5s ease-in-out infinite;
+    }
+
+    .emoji-animated-spin {
+      animation: rotate-slow 3s linear infinite;
+    }
+
+    /* ============================================
+       EMOJI IN HEADERS
+       ============================================ */
+
+    h1 .custom-emoji,
+    h2 .custom-emoji,
+    h3 .custom-emoji {
+      margin-right: 0.3em;
+      vertical-align: middle;
+    }
+
+    /* ============================================
+       EMOJI IN BUTTONS
+       ============================================ */
+
+    .btn .custom-emoji {
+      margin-right: 0.5em;
+    }
+
+    /* ============================================
+       EMOJI LISTS
+       ============================================ */
+
+    .emoji-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .emoji-list li {
+      padding-left: 2em;
+      position: relative;
+      margin-bottom: 0.75rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    .emoji-list li::before {
+      position: absolute;
+      left: 0;
+      font-size: 1.2em;
+    }
+
+    /* Emoji Bullet Points by Category */
+    .emoji-list.music li::before { content: "🎵"; }
+    .emoji-list.studio li::before { content: "🎛️"; }
+    .emoji-list.content li::before { content: "🎥"; }
+    .emoji-list.vibe li::before { content: "⚡"; }
+    .emoji-list.business li::before { content: "💼"; }
+    .emoji-list.social li::before { content: "💬"; }
+
+    /* ============================================
+       EMOJI DIVIDERS
+       ============================================ */
+
+    .emoji-divider {
+      text-align: center;
+      margin: 3rem 0;
+      font-size: 2em;
+      opacity: 0.6;
+      user-select: none;
+    }
+
+    .emoji-divider::before,
+    .emoji-divider::after {
+      content: "✨";
+      margin: 0 1rem;
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       EMOJI BADGES
+       ============================================ */
+
+    .emoji-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(79, 172, 254, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      border: 1px solid rgba(79, 172, 254, 0.3);
+      transition: all 0.3s ease;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .emoji-badge:hover {
+      background: rgba(79, 172, 254, 0.2);
+      border-color: rgba(79, 172, 254, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .emoji-badge .custom-emoji {
+      font-size: 1.3em;
+    }
+
+    /* ============================================
+       EMOJI GRID DISPLAY
+       ============================================ */
+
+    .emoji-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      background: var(--bg-card);
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+
+    .emoji-grid-item {
+      text-align: center;
+      font-size: 2em;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .emoji-grid-item:hover {
+      background: rgba(79, 172, 254, 0.1);
+      transform: scale(1.1);
+    }
+
+    /* ============================================
+       SOCIAL ICON ENTRANCE ANIMATION
+       ============================================ */
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .social-link {
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .social-link:nth-child(1) { animation-delay: 0.1s; }
+    .social-link:nth-child(2) { animation-delay: 0.2s; }
+    .social-link:nth-child(3) { animation-delay: 0.3s; }
+    .social-link:nth-child(4) { animation-delay: 0.4s; }
+    .social-link:nth-child(5) { animation-delay: 0.5s; }
+    .social-link:nth-child(6) { animation-delay: 0.6s; }
+    .social-link:nth-child(7) { animation-delay: 0.7s; }
+
+    /* ============================================
+       RESPONSIVE ADJUSTMENTS
+       ============================================ */
+
+    @media (max-width: 768px) {
+      .social-links {
+        gap: 0.75rem;
+      }
+      
+      .social-link {
+        width: 44px;
+        height: 44px;
+      }
+      
+      .social-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .custom-emoji {
+        font-size: 1em;
+      }
+      
+      .emoji-lg {
+        font-size: 1.5em;
+      }
+      
+      .emoji-xl {
+        font-size: 2em;
+      }
+      
+      .emoji-grid {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 0.75rem;
+      }
+    }
+
+    /* ============================================
+       DEMO PAGE STYLING (Remove for production)
+       ============================================ */
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+    }
+
+    .demo-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #ff00ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .demo-section h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--jazer-blue-mid);
+    }
+
+    code {
+      background: rgba(79, 172, 254, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: var(--jazer-cyan);
+    }
+
+    .code-block {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      border: 1px solid var(--border-light);
+    }
+
+    .code-block pre {
+      margin: 0;
+      color: var(--text-gray);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       DEMO: SOCIAL MEDIA ICONS
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Social Media Icons</h2>
+    
+    <div class="social-links">
+      <!-- X (Twitter) -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="social-link x-twitter" aria-label="X (Twitter)">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="social-link youtube" aria-label="YouTube">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+
+      <!-- SoundCloud -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="social-link soundcloud" aria-label="SoundCloud">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.051 0-.078.035-.083.087l-.21 1.325.21 1.279c.005.05.032.085.083.085.046 0 .075-.035.08-.085l.232-1.279-.232-1.325c-.005-.052-.034-.087-.08-.087m1.79-1.895c-.058 0-.1.052-.108.113l-.196 2.84.196 2.723c.008.06.05.112.108.112.053 0 .09-.052.1-.112l.223-2.723-.223-2.84c-.01-.06-.047-.113-.1-.113m.903-.231c-.06 0-.106.054-.113.119l-.176 3.071.176 2.946c.007.065.053.12.113.12.056 0 .098-.055.108-.12l.203-2.946-.203-3.071c-.01-.065-.052-.12-.108-.12m.906-.404c-.065 0-.113.058-.121.127l-.157 3.476.157 3.15c.008.07.056.127.121.127.061 0 .11-.057.12-.127l.18-3.15-.18-3.476c-.01-.069-.059-.127-.12-.127m.927-.436c-.069 0-.122.062-.13.134l-.138 3.912.138 3.13c.008.076.061.138.13.138.065 0 .118-.062.126-.138l.157-3.13-.157-3.912c-.008-.072-.061-.134-.126-.134m.916-.446c-.074 0-.131.065-.14.143l-.117 4.358.117 3.089c.009.082.066.145.14.145.07 0 .127-.063.136-.145l.137-3.089-.137-4.358c-.009-.078-.066-.143-.136-.143m.918-.506c-.078 0-.137.069-.145.151l-.098 4.864.098 3.03c.008.086.067.154.145.154.074 0 .132-.068.14-.154l.117-3.03-.117-4.864c-.008-.082-.066-.151-.14-.151m.925-.542c-.083 0-.145.073-.153.159l-.078 5.406.078 2.952c.008.091.07.162.153.162.078 0 .14-.071.148-.162l.093-2.952-.093-5.406c-.008-.086-.07-.159-.148-.159m.906-.654c-.087 0-.153.077-.161.168l-.059 6.06.059 2.876c.008.095.074.171.161.171.082 0 .148-.076.156-.171l.075-2.876-.075-6.06c-.008-.091-.074-.168-.156-.168m.943-.641c-.095 0-.168.082-.177.18l-.039 6.701.039 2.793c.009.103.082.184.177.184.091 0 .163-.081.172-.184l.052-2.793-.052-6.701c-.009-.098-.081-.18-.172-.18m.935-.755c-.101 0-.18.085-.189.191l-.02 7.456.02 2.708c.009.108.088.196.189.196.095 0 .17-.088.179-.196l.032-2.708-.032-7.456c-.009-.106-.084-.191-.179-.191m.956-.766c-.105 0-.19.089-.198.202l-.006 8.222.006 2.617c.008.114.093.207.198.207.1 0 .181-.093.189-.207l.02-2.617-.02-8.222c-.008-.113-.089-.202-.189-.202m9.912 2.783c-.337 0-.663.072-.961.205a5.405 5.405 0 0 0-5.397-5.147c-.106 0-.207.01-.305.024-.095.015-.143.064-.143.16v15.882c0 .108.053.165.157.18 2.957.025 5.915.008 8.875.008.095 0 .189-.005.284-.013 1.98-.134 3.532-1.832 3.532-3.883 0-2.15-1.735-3.89-3.88-3.89"/>
+        </svg>
+      </a>
+
+      <!-- Facebook -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+
+      <!-- Spotify -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="social-link spotify" aria-label="Spotify">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 17.318c-.223.362-.624.468-.987.25-2.71-1.656-6.115-2.03-10.126-1.113-.39.09-.778-.17-.868-.56-.09-.39.17-.778.56-.868 4.394-1.004 8.142-.569 11.39 1.288.363.223.478.624.25.987zm1.408-3.134c-.28.454-.88.594-1.332.315-3.104-1.91-7.832-2.465-11.504-1.348-.478.145-.98-.122-1.125-.6-.145-.477.12-.98.6-1.125 4.194-1.274 9.368-.66 12.906 1.526.453.28.594.88.314 1.332zm.122-3.264C15.65 9.039 9.124 8.803 5.32 10.018c-.57.177-1.174-.138-1.352-.71-.177-.57.14-1.174.71-1.352 4.36-1.393 11.518-1.124 16.063 1.548.528.305.704 1.006.396 1.534-.306.528-1.004.704-1.532.396z"/>
+        </svg>
+      </a>
+    </div>
+
+    <h3>HTML Code:</h3>
+    <div class="code-block">
+      <pre>&lt;div class="social-links"&gt;
+  &lt;a href="YOUR_URL" class="social-link x-twitter"&gt;
+    &lt;svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"&gt;
+      &lt;!-- SVG path here --&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;!-- Repeat for each platform --&gt;
+&lt;/div&gt;</pre>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DEMO: CUSTOM EMOJIS
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Custom Emoji System</h2>
+
+    <h3>🎵 Music & Audio (Blue Glow)</h3>
+    <div style="font-size: 2em; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-music interactive">🎵</span>
+      <span class="custom-emoji emoji-music interactive">🎶</span>
+      <span class="custom-emoji emoji-music interactive">🎧</span>
+      <span class="custom-emoji emoji-music interactive">🎤</span>
+      <span class="custom-emoji emoji-music interactive">🎙️</span>
+      <span class="custom-emoji emoji-music interactive">🎹</span>
+      <span class="custom-emoji emoji-music interactive">🎸</span>
+      <span class="custom-emoji emoji-music interactive">🥁</span>
+    </div>
+
+    <h3>🎛️ Studio & Production (Purple Glow)</h3>
+    <div style="font-size: 2em; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-studio interactive">🎛️</span>
+      <span class="custom-emoji emoji-studio interactive">🎚️</span>
+      <span class="custom-emoji emoji-studio interactive">💻</span>
+      <span class="custom-emoji emoji-studio interactive">🖥️</span>
+      <span class="custom-emoji emoji-studio interactive">🔴</span>
+      <span class="custom-emoji emoji-studio interactive">▶️</span>
+    </div>
+
+    <h3>🎥 Content Creation (Cyan Glow)</h3>
+    <div style="font-size: 2em; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-content interactive">🎥</span>
+      <span class="custom-emoji emoji-content interactive">🎬</span>
+      <span class="custom-emoji emoji-content interactive">📸</span>
+      <span class="custom-emoji emoji-content interactive">📹</span>
+      <span class="custom-emoji emoji-content interactive">📱</span>
+      <span class="custom-emoji emoji-content interactive">👀</span>
+    </div>
+
+    <h3>⚡ Studio Life & Vibe (Orange Glow)</h3>
+    <div style="font-size: 2em; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-vibe interactive">☕</span>
+      <span class="custom-emoji emoji-vibe interactive">🌙</span>
+      <span class="custom-emoji emoji-vibe interactive">⚡</span>
+      <span class="custom-emoji emoji-vibe interactive">🔥</span>
+      <span class="custom-emoji emoji-vibe interactive">✨</span>
+      <span class="custom-emoji emoji-vibe interactive">💡</span>
+    </div>
+
+    <h3>💼 Business & Organization (Green Glow)</h3>
+    <div style="font-size: 2em; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-business interactive">💼</span>
+      <span class="custom-emoji emoji-business interactive">📈</span>
+      <span class="custom-emoji emoji-business interactive">💰</span>
+      <span class="custom-emoji emoji-business interactive">💎</span>
+      <span class="custom-emoji emoji-business interactive">🚀</span>
+      <span class="custom-emoji emoji-business interactive">🎯</span>
+    </div>
+
+    <h3>💬 Communication & Social (Magenta Glow)</h3>
+    <div style="font-size: 2em; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-social interactive">👋</span>
+      <span class="custom-emoji emoji-social interactive">🤝</span>
+      <span class="custom-emoji emoji-social interactive">💬</span>
+      <span class="custom-emoji emoji-social interactive">🎉</span>
+      <span class="custom-emoji emoji-social interactive">💯</span>
+      <span class="custom-emoji emoji-social interactive">🤘</span>
+    </div>
+
+    <h3>💠 Design Accents (Gradient Glow)</h3>
+    <div style="font-size: 2em; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-accent interactive">🟣</span>
+      <span class="custom-emoji emoji-accent interactive">🔵</span>
+      <span class="custom-emoji emoji-accent interactive">🔹</span>
+      <span class="custom-emoji emoji-accent interactive">💠</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DEMO: ANIMATED EMOJIS
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Animated Emojis</h2>
+
+    <h3>Pulse Animation</h3>
+    <div style="font-size: 3em; display: flex; gap: 2rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-music emoji-animated-pulse">🎵</span>
+      <span class="custom-emoji emoji-studio emoji-animated-pulse">🎛️</span>
+      <span class="custom-emoji emoji-vibe emoji-animated-pulse">🔥</span>
+    </div>
+
+    <h3>Bounce Animation</h3>
+    <div style="font-size: 3em; display: flex; gap: 2rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-content emoji-animated-bounce">🎥</span>
+      <span class="custom-emoji emoji-business emoji-animated-bounce">🚀</span>
+      <span class="custom-emoji emoji-social emoji-animated-bounce">🎉</span>
+    </div>
+
+    <h3>Spin Animation</h3>
+    <div style="font-size: 3em; display: flex; gap: 2rem; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-accent emoji-animated-spin">💠</span>
+      <span class="custom-emoji emoji-music emoji-animated-spin">💿</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DEMO: EMOJI BADGES
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Emoji Badges</h2>
+
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <div class="emoji-badge">
+        <span class="custom-emoji emoji-music">🎵</span>
+        <span>New Track</span>
+      </div>
+
+      <div class="emoji-badge">
+        <span class="custom-emoji emoji-vibe">🔥</span>
+        <span>Trending</span>
+      </div>
+
+      <div class="emoji-badge">
+        <span class="custom-emoji emoji-content">📡</span>
+        <span>Live Now</span>
+      </div>
+
+      <div class="emoji-badge">
+        <span class="custom-emoji emoji-business">🚀</span>
+        <span>Just Launched</span>
+      </div>
+    </div>
+
+    <h3>HTML Code:</h3>
+    <div class="code-block">
+      <pre>&lt;div class="emoji-badge"&gt;
+  &lt;span class="custom-emoji emoji-music"&gt;🎵&lt;/span&gt;
+  &lt;span&gt;New Track&lt;/span&gt;
+&lt;/div&gt;</pre>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DEMO: EMOJI LISTS
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Emoji Lists</h2>
+
+    <h3>Music List</h3>
+    <ul class="emoji-list music">
+      <li>Hip-hop beats with soul</li>
+      <li>Jazz-influenced production</li>
+      <li>Electronic experimentation</li>
+    </ul>
+
+    <h3>Vibe List</h3>
+    <ul class="emoji-list vibe">
+      <li>Late night sessions</li>
+      <li>Coffee-fueled creativity</li>
+      <li>Pure energy and focus</li>
+    </ul>
+
+    <h3>Business List</h3>
+    <ul class="emoji-list business">
+      <li>Strategic releases</li>
+      <li>Brand partnerships</li>
+      <li>Revenue growth</li>
+    </ul>
+
+    <h3>HTML Code:</h3>
+    <div class="code-block">
+      <pre>&lt;ul class="emoji-list music"&gt;
+  &lt;li&gt;Your list item here&lt;/li&gt;
+&lt;/ul&gt;</pre>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DEMO: SIZE VARIATIONS
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Size Variations</h2>
+
+    <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+      <span class="custom-emoji emoji-music emoji-sm">🎵 Small</span>
+      <span class="custom-emoji emoji-music emoji-md">🎵 Medium</span>
+      <span class="custom-emoji emoji-music emoji-lg">🎵 Large</span>
+      <span class="custom-emoji emoji-music emoji-xl">🎵 XL</span>
+    </div>
+
+    <h3>HTML Code:</h3>
+    <div class="code-block">
+      <pre>&lt;span class="custom-emoji emoji-music emoji-sm"&gt;🎵&lt;/span&gt;
+&lt;span class="custom-emoji emoji-music emoji-md"&gt;🎵&lt;/span&gt;
+&lt;span class="custom-emoji emoji-music emoji-lg"&gt;🎵&lt;/span&gt;
+&lt;span class="custom-emoji emoji-music emoji-xl"&gt;🎵&lt;/span&gt;</pre>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DEMO: USAGE IN HEADERS
+       ============================================ -->
+  <div class="demo-section">
+    <h2>
+      <span class="custom-emoji emoji-music emoji-animated-pulse">🎵</span>
+      Emojis in Headers
+    </h2>
+
+    <h3>
+      <span class="custom-emoji emoji-studio">🎛️</span>
+      Studio Sessions
+    </h3>
+
+    <h3>
+      <span class="custom-emoji emoji-vibe emoji-animated-bounce">🔥</span>
+      What's Hot
+    </h3>
+
+    <h3>HTML Code:</h3>
+    <div class="code-block">
+      <pre>&lt;h2&gt;
+  &lt;span class="custom-emoji emoji-music"&gt;🎵&lt;/span&gt;
+  Your Heading Text
+&lt;/h2&gt;</pre>
+    </div>
+  </div>
+
+  <!-- ============================================
+       QUICK REFERENCE GUIDE
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Quick Reference Guide</h2>
+
+    <h3>Emoji Categories & Classes</h3>
+    <ul class="emoji-list business">
+      <li><code>emoji-music</code> - Blue glow: 🎵🎶🎧🎤🎙️🎹🎸🥁🎷🎻🎺🎼📻🔊🔉🔇</li>
+      <li><code>emoji-studio</code> - Purple glow: 🎚️🎛️💻🖥️💿📼💾🔌🔋🖱️⌨️🔴⏭️▶️</li>
+      <li><code>emoji-content</code> - Cyan glow: 🎥🎬📸📹📱🤳📡👀🗣️👥🌍🕸️🔔🎫</li>
+      <li><code>emoji-vibe</code> - Orange glow: ☕🥤🌙🌃🌚💤🚬🌫️👽🤖🧠💡⚡🔥✨🌟</li>
+      <li><code>emoji-business</code> - Green glow: 💼📈📊💰💳💎📜🖊️🏷️📁📂📌📎🗑️🚀🎯</li>
+      <li><code>emoji-social</code> - Magenta glow: 👋🤝📧📨📝✍️💬📍✅❌⚠️🎉🤯😍💯🆒🔝🤘🕶️</li>
+      <li><code>emoji-accent</code> - Gradient glow: 🟣🔵🔹💠⬛</li>
+    </ul>
+
+    <h3>Size Classes</h3>
+    <ul class="emoji-list content">
+      <li><code>emoji-sm</code> - Small (1em)</li>
+      <li><code>emoji-md</code> - Medium (1.5em)</li>
+      <li><code>emoji-lg</code> - Large (2em)</li>
+      <li><code>emoji-xl</code> - Extra Large (3em)</li>
+    </ul>
+
+    <h3>Animation Classes</h3>
+    <ul class="emoji-list vibe">
+      <li><code>emoji-animated-pulse</code> - Pulsing glow effect</li>
+      <li><code>emoji-animated-bounce</code> - Subtle bounce up and down</li>
+      <li><code>emoji-animated-spin</code> - Slow rotation</li>
+    </ul>
+
+    <h3>Interactive Class</h3>
+    <ul class="emoji-list social">
+      <li><code>interactive</code> - Adds hover effects and cursor pointer</li>
+    </ul>
+
+    <h3>List Classes</h3>
+    <ul class="emoji-list music">
+      <li><code>emoji-list music</code> - Music note bullets (🎵)</li>
+      <li><code>emoji-list studio</code> - Studio bullets (🎛️)</li>
+      <li><code>emoji-list content</code> - Content bullets (🎥)</li>
+      <li><code>emoji-list vibe</code> - Energy bullets (⚡)</li>
+      <li><code>emoji-list business</code> - Business bullets (💼)</li>
+      <li><code>emoji-list social</code> - Social bullets (💬)</li>
+    </ul>
+  </div>
+
+  <!-- ============================================
+       IMPLEMENTATION NOTES
+       ============================================ -->
+  <div class="demo-section">
+    <h2>Implementation Notes</h2>
+
+    <h3>For Production Use:</h3>
+    <ol style="line-height: 2;">
+      <li>Copy the CSS from the <code>&lt;style&gt;</code> section to your main stylesheet</li>
+      <li>Remove the demo section styling (marked in comments)</li>
+      <li>Update social media <code>href</code> attributes with your actual profile URLs</li>
+      <li>Mix and match emoji classes to create custom effects</li>
+      <li>Combine category classes with size and animation classes for variety</li>
+    </ol>
+
+    <h3>Browser Support:</h3>
+    <p>All modern browsers support these features. The system uses:</p>
+    <ul class="emoji-list content">
+      <li>CSS3 transforms and animations</li>
+      <li>SVG for social icons</li>
+      <li>Native emoji rendering</li>
+      <li>CSS filters for glow effects</li>
+    </ul>
+
+    <h3>Performance Tips:</h3>
+    <ul class="emoji-list vibe">
+      <li>Animations use GPU-accelerated properties</li>
+      <li>SVGs are inline for faster loading</li>
+      <li>No external dependencies required</li>
+      <li>Minimal CSS footprint</li>
+    </ul>
+  </div>
+
+</body>
+</html>

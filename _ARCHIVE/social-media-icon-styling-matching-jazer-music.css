@@ -1,0 +1,132 @@
+/* Social Media Icon Styling - Matching jazer-music.com */
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover Effects */
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.2) 0%, rgba(79, 172, 254, 0.2) 50%, rgba(255, 0, 255, 0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.social-link:hover::before {
+  opacity: 1;
+}
+
+.social-link:hover {
+  border-color: rgba(79, 172, 254, 0.6);
+}
+
+.social-link:hover .social-icon {
+  color: #4facfe;
+  transform: scale(1.1);
+}
+
+/* Individual Platform Hover Colors (Optional) */
+.social-link:nth-child(1):hover .social-icon { /* X/Twitter */
+  color: #ffffff;
+}
+
+.social-link:nth-child(2):hover .social-icon { /* Instagram */
+  color: #E4405F;
+}
+
+.social-link:nth-child(3):hover .social-icon { /* TikTok */
+  color: #00f2ea;
+}
+
+.social-link:nth-child(4):hover .social-icon { /* YouTube */
+  color: #FF0000;
+}
+
+.social-link:nth-child(5):hover .social-icon { /* SoundCloud */
+  color: #ff8800;
+}
+
+.social-link:nth-child(6):hover .social-icon { /* Facebook */
+  color: #1877F2;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .social-links {
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .social-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Animation on page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social-link {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.social-link:nth-child(1) { animation-delay: 0.1s; }
+.social-link:nth-child(2) { animation-delay: 0.2s; }
+.social-link:nth-child(3) { animation-delay: 0.3s; }
+.social-link:nth-child(4) { animation-delay: 0.4s; }
+.social-link:nth-child(5) { animation-delay: 0.5s; }
+.social-link:nth-child(6) { animation-delay: 0.6s; }
