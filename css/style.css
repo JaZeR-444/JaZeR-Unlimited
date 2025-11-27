@@ -104,14 +104,14 @@
   --jazer-orange: #ff8800;
 
   /* Gradients - PLAYFUL */
-  --gradient-primary: linear-gradient(135deg, #ffbe0b 0%, #9333ea 50%, #00f2ea 100%);
-  --gradient-text: linear-gradient(135deg, #00f2fe 0%, #9333ea 50%, #ffbe0b 100%);
-  --gradient-accent: linear-gradient(135deg, #9333ea 0%, #00f2ea 100%);
+  --gradient-primary: linear-gradient(135deg, #00f2ea 0%, #ff006e 50%, #9333ea 100%);
+  --gradient-text: linear-gradient(135deg, #00f2ea 0%, #9333ea 50%, #ff006e 100%);
+  --gradient-accent: linear-gradient(135deg, #ff006e 0%, #9333ea 100%);
 
   /* Backgrounds */
   --bg-dark: #000000;
   --bg-card: rgba(255, 255, 255, 0.05);
-  --bg-bubble: rgba(147, 51, 234, 0.1);
+  --bg-bubble: rgba(255, 0, 110, 0.1);
   --text-light: #ffffff;
   --text-gray: #b0b0b0;
   --text-muted: #808080;
@@ -557,7 +557,7 @@ body {
   margin-bottom: 3rem;
   padding-bottom: 1.5rem;
   border-bottom: 3px solid;
-  border-image: linear-gradient(90deg, #ffbe0b 0%, #9333ea 50%, #00f2ea 100%) 1;
+  border-image: linear-gradient(90deg, #00f2ea 0%, #ff006e 50%, #9333ea 100%) 1;
   position: relative;
   z-index: 1;
 }
@@ -844,7 +844,7 @@ code {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--jazer-cyan), var(--jazer-purple));
+  background: linear-gradient(90deg, var(--jazer-cyan), var(--jazer-pink));
   transition: width 0.3s ease;
 }
 
@@ -918,7 +918,7 @@ code {
     repeating-radial-gradient(circle at 50% 50%,
       transparent 0px,
       transparent 30px,
-      rgba(147, 51, 234, 0.12) 32px,
+      rgba(255, 0, 110, 0.12) 32px,
       transparent 34px,
       transparent 80px
     );
@@ -983,7 +983,7 @@ code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(147, 51, 234, 0.1));
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(255, 0, 110, 0.1));
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
@@ -998,7 +998,7 @@ code {
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0, 242, 254, 0.4),
-              0 5px 20px rgba(147, 51, 234, 0.3);
+              0 5px 20px rgba(255, 0, 110, 0.3);
   border-color: var(--jazer-cyan);
   filter: brightness(1.05);
 }
@@ -1042,7 +1042,7 @@ code {
 
 .cta-button:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(147, 51, 234, 0.5),
+  box-shadow: 0 8px 25px rgba(255, 0, 110, 0.5),
               0 0 30px rgba(0, 242, 254, 0.4);
   animation-play-state: paused;
 }
@@ -1077,7 +1077,7 @@ code {
   border-color: var(--jazer-cyan);
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 20px rgba(0, 242, 254, 0.4),
-              0 0 40px rgba(147, 51, 234, 0.3);
+              0 0 40px rgba(255, 0, 110, 0.3);
   transform: translateY(-2px);
 }
 
