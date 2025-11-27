@@ -219,7 +219,7 @@ html, body {
 
 /* Use the brand gradient if present, otherwise fall back to the dark background */
 body {
-  background: var(--bg-gradient, var(--bg-dark)) center top / cover no-repeat fixed;
+  background: var(--bg-gradient, var(--bg-dark)) center top / cover no-repeat scroll;
   color: var(--text-light);
   font-family: var(--font-body);
   font-size: var(--text-base);
