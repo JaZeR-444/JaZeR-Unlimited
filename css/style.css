@@ -975,12 +975,12 @@ main:has(.hero:first-child) {
 /* 4. Components */
 .card {
   background: var(--bg-card);
-  border: 1px solid rgba(0, 242, 234, 0.2);
+  border: none;
   border-radius: 16px;
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -1008,7 +1008,6 @@ main:has(.hero:first-child) {
 .card:focus-within {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0, 242, 234, 0.4), 0 5px 20px rgba(255, 0, 110, 0.3);
-  border-color: var(--jazer-cyan);
   filter: brightness(1.05);
 }
 
@@ -1329,4 +1328,82 @@ footer {
   margin-top: 0.75rem;
   font-size: var(--text-sm);
   color: var(--text-gray);
+}
+
+/* ============================================
+   GRADIENT CARD BORDERS
+   ============================================ */
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--gradient-primary);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card:hover::after,
+.card:focus-within::after {
+  padding: 3px;
+}
+
+/* ============================================
+   FOOTER SITEMAP STYLING
+   ============================================ */
+
+.footer-sitemap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  list-style: none;
+}
+
+.footer-sitemap a {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-family: var(--font-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.footer-sitemap a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.footer-sitemap a:hover {
+  color: var(--jazer-cyan);
+}
+
+.footer-sitemap a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer-sitemap {
+    gap: 0.75rem 1.25rem;
+  }
 }
