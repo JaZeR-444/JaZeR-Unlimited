@@ -169,7 +169,7 @@
 }
 
 body {
-  background: var(--bg-dark);
+  background: var(--bg-card);
   color: var(--text-light);
   font-family: var(--font-body);
   font-size: var(--text-base);
