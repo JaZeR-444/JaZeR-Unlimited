@@ -844,7 +844,7 @@ code {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--jazer-cyan), var(--jazer-magenta));
+  background: linear-gradient(90deg, var(--jazer-cyan), var(--jazer-purple));
   transition: width 0.3s ease;
 }
 
@@ -884,9 +884,9 @@ code {
   padding-top: 80px;
   /* Offset for fixed nav */
   background:
-    radial-gradient(circle at 25% 25%, rgba(0, 242, 254, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.06) 0%, transparent 70%);
+    radial-gradient(circle at 25% 25%, rgba(0, 242, 254, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 190, 11, 0.08) 0%, transparent 70%);
   background-size: 300% 300%;
   animation: backgroundShift 15s ease infinite;
   position: relative;
@@ -940,7 +940,7 @@ code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(255, 0, 255, 0.1));
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(147, 51, 234, 0.1));
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
@@ -954,8 +954,8 @@ code {
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 242, 254, 0.3),
-              0 5px 20px rgba(255, 0, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 242, 254, 0.4),
+              0 5px 20px rgba(147, 51, 234, 0.3);
   border-color: var(--jazer-cyan);
   filter: brightness(1.05);
 }
@@ -999,8 +999,8 @@ code {
 
 .cta-button:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(255, 0, 255, 0.5),
-              0 0 30px rgba(255, 190, 11, 0.4);
+  box-shadow: 0 8px 25px rgba(147, 51, 234, 0.5),
+              0 0 30px rgba(0, 242, 254, 0.4);
   animation-play-state: paused;
 }
 
@@ -1033,8 +1033,8 @@ code {
   outline: none;
   border-color: var(--jazer-cyan);
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.3),
-              0 0 40px rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4),
+              0 0 40px rgba(147, 51, 234, 0.3);
   transform: translateY(-2px);
 }
 
