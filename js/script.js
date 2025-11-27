@@ -182,4 +182,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initBrandGallery();
+
+    /* ============================================
+       PAGE-SPECIFIC ROTATING SPICY TEASERS
+       ============================================ */
+
+    const musicTeasers = [
+      "Cooking something that'll melt your speakers… almost ready",
+      "New drop loading… 99% (the last 1% is pure vibe check)",
+      "I'm in the studio, headphones on, world off. See you soon",
+      "Next track is currently doing backflips in my DAW",
+      "Warning: upcoming music may cause uncontrollable head-nodding",
+      "Fresh beats marinating… patience, fam",
+      "Plot twist: the silence is part of the build-up",
+      "Hold tight, I'm currently overclocking the future",
+    ];
+
+    const videoTeasers = [
+      "Camera's charged, neon's glowing, chaos incoming",
+      "Visuals so fire my editor needs sunglasses",
+      "Currently turning caffeine into cinematic madness",
+      "Next video is 4K, 60 fps, and 100% unhinged",
+      "Rendering… please enjoy this intermission of nothingness",
+      "Secret visuals dropping faster than your jaw will",
+    ];
+
+    const shopTeasers = [
+      "Merch cooker currently on 400°F… almost crispy",
+      "New drop loading… your wallet just felt that",
+      "Designing limited heat that'll break the internet (and banks)",
+      "Fresh threads & goodies incoming. Start saving those coins",
+      "The cart button is getting lonely… soon it'll have friends",
+      "Limited edition everything. Blink and you'll cry in the group chat",
+    ];
+
+    const universalTeasers = [
+      "Good things come to those who wait… great things come to those who stay subscribed",
+      "I'm not late, I'm just on artist time",
+      "Currently turning vibes into actual products. Science is wild.",
+      "If you're reading this, you're early. Tell your friends you were here first",
+      "The void is temporary. The sauce is eternal.",
+      "Something illegal (to how good it is) is being cooked",
+    ];
+
+    const teaser = document.getElementById("jazer-teaser");
+    if (teaser) {
+      let pool = universalTeasers; // default fallback
+
+      if (document.body.classList.contains("music-page") || window.location.pathname.includes("music")) {
+        pool = [...musicTeasers, ...universalTeasers];
+      } else if (document.body.classList.contains("videos-page") || window.location.pathname.includes("video")) {
+        pool = [...videoTeasers, ...universalTeasers];
+      } else if (document.body.classList.contains("shop-page") || window.location.pathname.includes("shop")) {
+        pool = [...shopTeasers, ...universalTeasers];
+      }
+
+      let current = -1;
+      const rotate = () => {
+        let next;
+        do { next = Math.floor(Math.random() * pool.length); }
+        while (next === current && pool.length > 1);
+        current = next;
+        teaser.style.opacity = "0";
+        setTimeout(() => {
+          teaser.textContent = pool[current];
+          teaser.style.opacity = "1";
+        }, 300);
+      };
+
+      rotate();
+      setInterval(rotate, Math.floor(Math.random() * 3000) + 4500);
+    }
 });
