@@ -881,10 +881,8 @@ code {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 2rem 80px;
+  padding: 120px 2rem 60px;
   position: relative;
-  overflow: hidden;
-  background: var(--bg-dark);
 }
 
 
