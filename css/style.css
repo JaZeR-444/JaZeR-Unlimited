@@ -103,6 +103,10 @@
   --jazer-yellow: #ffbe0b;
   --jazer-orange: #ff8800;
 
+  /* RGB variants for rgba() usage */
+  --jazer-cyan-rgb: 0, 242, 234;
+  --jazer-pink-rgb: 255, 0, 110;
+
   /* Gradients - PLAYFUL */
   --gradient-primary: linear-gradient(135deg, #00f2ea 0%, #ff006e 50%, #9333ea 100%);
   --gradient-text: linear-gradient(135deg, #00f2ea 0%, #9333ea 50%, #ff006e 100%);
@@ -973,8 +977,8 @@ main:has(.hero:first-child) {
 
 /* 4. Components */
 .card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(147, 51, 234, 0.4);
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 242, 234, 0.2);
   border-radius: 16px;
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -991,7 +995,7 @@ main:has(.hero:first-child) {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(255, 0, 110, 0.1));
+  background: linear-gradient(135deg, rgba(0, 242, 234, 0.1), rgba(255, 0, 110, 0.1));
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
@@ -1003,16 +1007,16 @@ main:has(.hero:first-child) {
   z-index: 1;
 }
 
-.card:hover {
+.card:hover,
+.card:focus-within {
   transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(0, 242, 234, 0.5),
-              0 0 40px rgba(147, 51, 234, 0.4),
-              0 15px 40px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 242, 234, 0.4), 0 5px 20px rgba(255, 0, 110, 0.3);
   border-color: var(--jazer-cyan);
   filter: brightness(1.05);
 }
 
-.card:hover::before {
+.card:hover::before,
+.card:focus-within::before {
   opacity: 1;
 }
 
@@ -1209,21 +1213,29 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
 }
 
 .social-links a img {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-links a:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
+  filter: brightness(1.2);
+  box-shadow: 0 0 15px rgba(var(--jazer-cyan-rgb, 0, 242, 234), 0.5);
 }
 
 .social-links a:hover img {
   filter: drop-shadow(0 0 8px var(--jazer-cyan));
+}
+
+/* Hide duplicate social icons in contact page main content */
+.contact-form ~ div .social-links {
+  display: none;
 }
 
 /* ============================================
@@ -1240,4 +1252,22 @@ footer {
 .card.coming-soon p {
   font-size: 1.2rem;
   color: var(--text-gray);
+}
+
+/* Center "Stay tuned" cards in their sections */
+.grid:has(.coming-soon) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+}
+
+.grid:has(.coming-soon) .card.coming-soon {
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Teaser rotation animation */
+.teaser {
+  transition: opacity 0.3s ease;
 }
