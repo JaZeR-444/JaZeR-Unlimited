@@ -226,6 +226,8 @@ body {
   line-height: var(--leading-normal);
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ============================================
@@ -929,6 +931,7 @@ code {
 main {
   min-height: auto;
   padding-top: 80px;
+  flex: 1;
 }
 
 /* Remove main padding when hero is present (hero has its own nav clearance)
