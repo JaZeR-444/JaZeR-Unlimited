@@ -876,12 +876,12 @@ code {
 
 /* 3. Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 80px;
+  padding: 120px 2rem 80px;
   position: relative;
   overflow: hidden;
   background: var(--bg-dark);
