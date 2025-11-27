@@ -1057,6 +1057,12 @@ main:has(.hero:first-child) {
   animation-play-state: paused;
 }
 
+/* Contact form button centering */
+.contact-form .cta-button {
+  display: block;
+  margin: 2.5rem auto 0;
+}
+
 /* Forms */
 .form-group {
   margin-bottom: 1.5rem;
