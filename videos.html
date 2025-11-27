@@ -4,94 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary Meta Tags -->
     <title>Videos - JaZeR</title>
-    <meta name="title" content="Videos - JaZeR">
-    <meta name="description" content="Watch JaZeR's music videos, behind the scenes content, and live performances.">
-    <meta name="keywords" content="JaZeR, music videos, content creator">
-    <meta name="author" content="JaZeR">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Watch JaZeR's latest music videos and visual content.">
+    <link rel="canonical" href="https://jazer-music.com/videos.html">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jazer-music.com/videos.html">
-    <meta property="og:title" content="Videos - JaZeR">
-    <meta property="og:description" content="Watch JaZeR's music videos and exclusive content.">
-    <meta property="og:image" content="https://jazer-music.com/images/JaZeR%20Main%20Logo.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jazer-music.com/videos.html">
-    <meta property="twitter:title" content="Videos - JaZeR">
+<body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
     <nav class="site-nav" role="navigation" aria-label="Primary">
         <div class="container nav-inner">
             <a class="logo" href="index.html" aria-label="Go to home">
                 <img src="images/JaZeR Main Logo.jpg" alt="JaZeR logo">
             </a>
-            <div class="container section">
-                <h2 class="jazer-h2">
-                    <span class="custom-emoji emoji-content emoji-animated-spin">🎥</span>
-                    Videos & Visuals
-                </h2>
-                <div class="media-embed">
-                    <p class="jazer-body">YouTube/Vimeo video embeds go here</p>
-                    <p class="jazer-body-sm" style="margin-top:1rem;">Replace this div with actual video embed codes</p>
-                </div>
+            <button id="mobileMenu" class="mobile-menu" aria-expanded="false" aria-controls="navLinks"
+                aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="videos.html" class="active">Videos</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-                <div class="grid">
-                    <article class="card">
-                        <h3 class="jazer-h3">Music Video - Track Name</h3>
-                        <p class="jazer-body">Official music video featuring stunning visuals and creative direction.
-                        </p>
-                    </article>
-                    <article class="card">
-                        <h3 class="jazer-h3">Behind The Scenes</h3>
-                        <p class="jazer-body">See how I create my music from concept to final production.</p>
-                    </article>
-                    <article class="card">
-                        <h3 class="jazer-h3">Live Performance</h3>
-                        <p class="jazer-body">Captured live at [Venue Name] - full energy performance.</p>
-                    </article>
-                </div>
+    <main id="main" tabindex="-1">
+        <div class="container section">
+            <h1>Videos & Visuals</h1>
+            <div class="media-embed">
+                <p>📹 YouTube/Vimeo video embeds go here</p>
+                <p style="margin-top:1rem; font-size:0.9rem;">Replace this div with actual video embed codes</p>
             </div>
-            </section>
-            </main>
 
-            <!-- Footer -->
-            <footer>
-                <div class="container">
-                    <div class="social-links icon-group">
-                        <a href="https://instagram.com" title="Instagram" target="_blank" class="icon-button icon-pink">
-                            <img src="images/icons/social/instagram.svg" class="neon-icon icon-md icon-pink"
-                                alt="Instagram">
-                        </a>
-                        <a href="https://twitter.com" title="Twitter/X" target="_blank" class="icon-button icon-blue">
-                            <img src="images/icons/social/twitter-x.svg" class="neon-icon icon-md icon-blue"
-                                alt="Twitter/X">
-                        </a>
-                        <a href="https://youtube.com" title="YouTube" target="_blank" class="icon-button icon-pink">
-                            <img src="images/icons/social/youtube.svg" class="neon-icon icon-md icon-pink"
-                                alt="YouTube">
-                        </a>
-                        <a href="https://spotify.com" title="Spotify" target="_blank" class="icon-button icon-purple">
-                            <img src="images/icons/social/spotify.svg" class="neon-icon icon-md icon-purple"
-                                alt="Spotify">
-                        </a>
-                        <a href="https://soundcloud.com" title="SoundCloud" target="_blank"
-                            class="icon-button icon-orange">
-                            <img src="images/icons/social/soundcloud.svg" class="neon-icon icon-md icon-orange"
-                                alt="SoundCloud">
-                        </a>
-                    </div>
-                    <p class="jazer-caption">&copy; 2026 JaZeR. All rights reserved.</p>
-                </div>
-            </footer>
+            <div class="grid">
+                <article class="card">
+                    <h3>Music Video - Track Name</h3>
+                    <p>Official music video featuring stunning visuals and creative direction.</p>
+                </article>
+                <article class="card">
+                    <h3>Behind The Scenes</h3>
+                    <p>See how I create my music from concept to final production.</p>
+                </article>
+                <article class="card">
+                    <h3>Live Performance</h3>
+                    <p>Captured live at [Venue Name] - full energy performance.</p>
+                </article>
+            </div>
+        </div>
+    </main>
 
-            <script src="js/script.js"></script>
-            </body>
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter/X">🐦</a>
+                <a href="#" title="YouTube">📺</a>
+                <a href="#" title="Spotify">🎵</a>
+            </div>
+            <p>&copy; 2026 JaZeR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 
 </html>

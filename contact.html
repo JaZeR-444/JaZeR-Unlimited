@@ -4,29 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary Meta Tags -->
     <title>Contact - JaZeR</title>
-    <meta name="title" content="Contact - JaZeR">
-    <meta name="description" content="Get in touch with JaZeR for collaborations and inquiries.">
-    <meta name="keywords" content="JaZeR, contact, collaboration">
-    <meta name="author" content="JaZeR">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Get in touch with JaZeR.">
+    <link rel="canonical" href="https://jazer-music.com/contact.html">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jazer-music.com/contact.html">
-    <meta property="og:title" content="Contact - JaZeR">
-    <meta property="og:description" content="Get in touch with JaZeR for collaborations and inquiries.">
-    <meta property="og:image" content="https://jazer-music.com/images/JaZeR%20Main%20Logo.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jazer-music.com/contact.html">
-    <meta property="twitter:title" content="Contact - JaZeR">
+<body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
     <nav class="site-nav" role="navigation" aria-label="Primary">
         <div class="container nav-inner">
             <a class="logo" href="index.html" aria-label="Go to home">
@@ -50,83 +36,59 @@
     </nav>
 
     <main id="main" tabindex="-1">
-        <!-- CONTACT PAGE -->
-        <section class="page active">
-            <div class="container section">
-                <h1 class="jazer-h1">Get In Touch</h1>
-                <p class="jazer-lead text-center"
-                    style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Have a project in mind? Want to collaborate? Drop me a message and let's create something cosmic
-                    together.
-                </p>
+        <div class="container section">
+            <h1>Get In Touch</h1>
 
-                <div
-                    style="max-width: 700px; margin: 0 auto; background: var(--card-bg); border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.4);">
-                    <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLScl1R8w_hyZgh8fami3hKKqAlK2v5EvFyw1V2An_o9UU1VIjg/viewform?embedded=true"
-                        width="100%" height="1586" frameborder="0" marginheight="0" marginwidth="0"
-                        style="border-radius: 8px;">
-                        Loading…
-                    </iframe>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input id="subject" type="text" name="subject" required placeholder="What's this about?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your message..."></textarea>
                 </div>
 
-                <div style="text-align: center; margin-top:3rem;">
-                    <p class="jazer-body" style="color: var(--text-gray); margin-bottom:1rem;">Or reach out on social
-                        media:</p>
-                    <div class="social-links icon-group" style="justify-content: center;">
-                        <a href="https://instagram.com" title="Instagram" target="_blank" class="icon-button icon-pink">
-                            <img src="images/icons/social/instagram.svg" class="neon-icon icon-md icon-pink"
-                                alt="Instagram">
-                        </a>
-                        <a href="https://twitter.com" title="Twitter/X" target="_blank" class="icon-button icon-blue">
-                            <img src="images/icons/social/twitter-x.svg" class="neon-icon icon-md icon-blue"
-                                alt="Twitter/X">
-                        </a>
-                        <a href="https://youtube.com" title="YouTube" target="_blank" class="icon-button icon-pink">
-                            <img src="images/icons/social/youtube.svg" class="neon-icon icon-md icon-pink"
-                                alt="YouTube">
-                        </a>
-                        <a href="https://spotify.com" title="Spotify" target="_blank" class="icon-button icon-purple">
-                            <img src="images/icons/social/spotify.svg" class="neon-icon icon-md icon-purple"
-                                alt="Spotify">
-                        </a>
-                        <a href="https://soundcloud.com" title="SoundCloud" target="_blank"
-                            class="icon-button icon-orange">
-                            <img src="images/icons/social/soundcloud.svg" class="neon-icon icon-md icon-orange"
-                                alt="SoundCloud">
-                        </a>
-                    </div>
+                <input type="hidden" name="_subject" value="New contact from JaZeR website">
+
+                <button type="submit" class="cta-button">Send Message</button>
+
+                <p id="formStatus" style="margin-top:1rem; text-align: center;"></p>
+            </form>
+
+            <div style="text-align: center; margin-top:3rem;">
+                <p style="color: var(--text-secondary); margin-bottom:1rem;">Or reach out on social media:</p>
+                <div class="social-links">
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Twitter/X">🐦</a>
+                    <a href="#" title="YouTube">📺</a>
+                    <a href="#" title="Spotify">🎵</a>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="social-links icon-group">
-                <a href="https://instagram.com" title="Instagram" target="_blank" class="icon-button icon-pink">
-                    <img src="images/icons/social/instagram.svg" class="neon-icon icon-md icon-pink" alt="Instagram">
-                </a>
-                <a href="https://twitter.com" title="Twitter/X" target="_blank" class="icon-button icon-blue">
-                    <img src="images/icons/social/twitter-x.svg" class="neon-icon icon-md icon-blue" alt="Twitter/X">
-                </a>
-                <a href="https://youtube.com" title="YouTube" target="_blank" class="icon-button icon-pink">
-                    <img src="images/icons/social/youtube.svg" class="neon-icon icon-md icon-pink" alt="YouTube">
-                </a>
-                <a href="https://spotify.com" title="Spotify" target="_blank" class="icon-button icon-purple">
-                    <img src="images/icons/social/spotify.svg" class="neon-icon icon-md icon-purple" alt="Spotify">
-                </a>
-                <a href="https://soundcloud.com" title="SoundCloud" target="_blank" class="icon-button icon-orange">
-                    <img src="images/icons/social/soundcloud.svg" class="neon-icon icon-md icon-orange"
-                        alt="SoundCloud">
-                </a>
+            <div class="social-links">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter/X">🐦</a>
+                <a href="#" title="YouTube">📺</a>
+                <a href="#" title="Spotify">🎵</a>
             </div>
-            <p class="jazer-caption">&copy; 2026 JaZeR. All rights reserved.</p>
+            <p>&copy; 2026 JaZeR. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
-    </body>
+</body>
 
 </html>
