@@ -248,9 +248,10 @@ document.addEventListener('DOMContentLoaded', () => {
           teaser.textContent = pool[current];
           teaser.style.opacity = "1";
         }, 300);
+        // Schedule next rotation with random interval (4.5-7.5 seconds)
+        setTimeout(rotate, Math.floor(Math.random() * 3000) + 4500);
       };
 
       rotate();
-      setInterval(rotate, Math.floor(Math.random() * 3000) + 4500);
     }
 });
