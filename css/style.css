@@ -104,9 +104,9 @@
   --jazer-orange: #ff8800;
 
   /* Gradients - PLAYFUL */
-  --gradient-primary: linear-gradient(135deg, #ffbe0b 0%, #ff006e 50%, #ff00ff 100%);
-  --gradient-text: linear-gradient(135deg, #00f2fe 0%, #ff006e 50%, #ffbe0b 100%);
-  --gradient-accent: linear-gradient(135deg, #9333ea 0%, #ff00ff 100%);
+  --gradient-primary: linear-gradient(135deg, #ffbe0b 0%, #9333ea 50%, #00f2ea 100%);
+  --gradient-text: linear-gradient(135deg, #00f2fe 0%, #9333ea 50%, #ffbe0b 100%);
+  --gradient-accent: linear-gradient(135deg, #9333ea 0%, #00f2ea 100%);
 
   /* Backgrounds */
   --bg-dark: #000000;
