@@ -907,11 +907,8 @@ code {
 .hero-logo {
   max-width: 300px;
   margin-bottom: 2rem;
-  filter: drop-shadow(0 0 20px rgba(79, 172, 254, 0.5));
   animation: heroFadeInScale 1s ease-out,
-             logoFloat 6s ease-in-out 1s infinite,
-             heroGlowPulse 3s ease-in-out 1.5s infinite;
-  mix-blend-mode: screen;
+             logoFloat 6s ease-in-out 1s infinite;
 }
 
 /* Ensure video displays correctly */
