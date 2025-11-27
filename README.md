@@ -1,50 +1,97 @@
-# JaZeR Website (Work in Progress)
+# JaZeR - Official Website
 
-This is the private repo for the JaZeR site. It’s a static single-page app (plain HTML/CSS/JS) with a brand-forward design.
+Official website for JaZeR, a content creator and music artist dedicated to creating music that feels like home for those who don't always feel like they have one.
 
-## Structure
+🌐 **Live Site:** [jazer-music.com](https://jazer-music.com)
 
-- `index.html` — main site (moved to project root)
-- `404.html` — friendly not-found page
-- `css/` — styles, brand tokens in `style.css`
-- `js/` — navigation, contact form handling, brand color picker
-- `images/` — logo, artwork, favicon
-- `robots/robots.txt` — allow all + sitemap
-- `sitemap/sitemap.xml` — minimal sitemap
-- `README/` — original notes (kept)
+## About
 
-## Brand
-Palette and tokens aligned to:
-- Electric Purple `#8B5CF6`
-- Cosmic Blue `#3B82F6`
-- Neon Pink `#EC4899`
-- Night Black `#0B0E12`
-- Stardust White `#F8F9FF`
-- Graphite `#1F2937`
-- Soft Slate `#94A3B8`
+JaZeR is a focused beam of energy designed to cut through the noise, light up the dark, and remind you of what's possible. This website showcases music, videos, and the story behind the artist.
 
-## Local Preview
-Open `index.html` directly in your browser, or use a simple static server (recommended for hash routing).
+## Tech Stack
 
-## Deploy (later)
-Canonical domain set to https://jazeratx.com. When ready, deploy to Cloudflare Pages, Vercel, Netlify, or GitHub Pages. Update `og:image` to a dedicated share image (1200x630) when final.
+- **HTML5** - Multi-page structure
+- **CSS3** - Custom brand styling with glassmorphism effects
+- **Vanilla JavaScript** - Mobile menu, brand color cycling, interactive gallery
+- **Local Fonts** - DM Sans, Nunito, Outfit (self-hosted)
+- **GitHub Pages** - Deployment platform
 
-## Git Quickstart (Private Repo)
-1. Create a new private repository on GitHub (no README, no .gitignore).
-2. In this folder, run:
+## Project Structure
 
-```powershell
-# Initialize repo and commit
-git init
-git add -A
-git commit -m "Initial private commit: brand + structure"
-
-# Add remote (replace with your repo URL)
-git remote add origin https://github.com/<your-username>/<your-repo>.git
-
-# Push main branch
-git branch -M main
-git push -u origin main
+```
+JaZeR-Unlimited/
+├── index.html          # Home page
+├── music.html          # Music releases
+├── videos.html         # Video content
+├── about.html          # Artist story & mission
+├── shop.html           # Merchandise
+├── contact.html        # Contact form
+├── 404.html            # Custom error page
+├── css/
+│   └── style.css       # Main stylesheet with brand tokens
+├── js/
+│   └── script.js       # Interactive features
+├── images/             # Logos, artwork, brand assets
+├── Fonts/              # Local font files
+│   ├── dm-sans/
+│   ├── nunito/
+│   └── outfit/
+└── _ARCHIVE/           # Archived reference files
 ```
 
-If you want, I can run the local init/commit for you now and you can paste the remote URL after.
+## Brand Colors
+
+- **JaZeR Blue (Light):** `#4FACFE`
+- **JaZeR Blue (Mid):** `#00F2FE`
+- **JaZeR Purple:** `#9333EA`
+- **JaZeR Pink:** `#FF006E`
+- **Background:** `#0a0a0f`
+- **Text Light:** `#f8f9ff`
+
+## Features
+
+- ✨ **Multi-page navigation** - Clean URL structure
+- 🎨 **Brand color cycling** - Interactive logo click feature
+- 🖼️ **Brand gallery** - Color sampling from artwork
+- 📱 **Mobile responsive** - Optimized for all devices
+- ⚡ **Fast loading** - Local fonts, optimized assets
+- 🌙 **Dark theme** - Glassmorphism UI design
+
+## Local Development
+
+1. Clone the repository
+2. Open `index.html` in your browser, or use a local server:
+
+```bash
+# Python
+python -m http.server 8000
+
+# Node.js
+npx serve
+
+# VS Code
+# Use Live Server extension
+```
+
+3. Navigate to `http://localhost:8000`
+
+## Deployment
+
+The site is deployed via **GitHub Pages** with a custom domain:
+
+- **Repository:** GitHub (main branch)
+- **Domain:** jazer-music.com
+- **DNS:** Configured with A records pointing to GitHub Pages
+- **HTTPS:** Enforced via GitHub Pages
+
+## Contributing
+
+This is a personal artist website. For inquiries, visit the [contact page](https://jazer-music.com/contact.html).
+
+## License
+
+© 2026 JaZeR. All rights reserved.
+
+---
+
+**This is JaZeR. Welcome home.** 🌌✨
