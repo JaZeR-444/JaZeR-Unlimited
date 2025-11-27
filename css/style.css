@@ -167,23 +167,6 @@
     linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(6, 2, 8, 1) 30%, rgba(2, 1, 6, 1) 100%);
 }
 
-/* Ensure html/body expand naturally and let the gradient fill the page */
-html, body {
-  height: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Apply the brand gradient to the entire page */
-body {
-  background-image: var(--bg-gradient);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed; /* keeps the gradient steady while scrolling */
-  background-position: center top;
-}
-
 /* Make main wrappers transparent so the gradient shows through */
 main,
 .container,
@@ -221,15 +204,19 @@ footer {
   box-sizing: border-box;
 }
 
+/* ===== Replace the BASE STYLES body rule with this ===== */
+
 html, body {
+  /* let page size flow naturally but guarantee minimum viewport height */
   height: auto;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
+/* Use the brand gradient if present, otherwise fall back to the dark background */
 body {
-  background: var(--bg-dark);
+  background: var(--bg-gradient, var(--bg-dark)) center top / cover no-repeat fixed;
   color: var(--text-light);
   font-family: var(--font-body);
   font-size: var(--text-base);
