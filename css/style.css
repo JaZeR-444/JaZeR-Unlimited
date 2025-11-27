@@ -899,7 +899,9 @@ main {
   padding-top: 80px;
 }
 
-/* Remove main padding when hero is present (hero has its own nav clearance) */
+/* Remove main padding when hero is present (hero has its own nav clearance)
+   Note: :has() is supported in modern browsers (Chrome 105+, Firefox 121+, Safari 15.4+)
+   Falls back gracefully - pages with hero will just have slightly more top padding */
 main:has(.hero:first-child) {
   padding-top: 0;
 }
