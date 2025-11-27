@@ -160,20 +160,17 @@
 
 /* ---------- SITE-WIDE BACKGROUND GRADIENT ---------- */
 :root {
-  /* Seamless deep purple cosmic gradient - smoother transitions to avoid banding */
-  --bg-gradient: 
-    radial-gradient(ellipse 150% 100% at 50% 0%,
-      rgba(75, 0, 130, 0.5) 0%,
-      rgba(55, 0, 100, 0.6) 20%,
-      rgba(40, 0, 70, 0.8) 40%,
-      rgba(25, 0, 50, 0.95) 60%,
-      rgba(15, 0, 30, 1) 80%,
-      rgba(5, 0, 15, 1) 100%),
-    linear-gradient(180deg, 
-      rgba(20, 0, 40, 1) 0%, 
-      rgba(10, 0, 25, 1) 30%,
-      rgba(5, 0, 15, 1) 60%,
-      rgba(0, 0, 5, 1) 100%);
+  /* Single smooth gradient from deep purple at top to black at bottom - no layering to avoid banding */
+  --bg-gradient: linear-gradient(180deg,
+    #1a0033 0%,
+    #150028 10%,
+    #10001f 25%,
+    #0c0018 40%,
+    #080010 55%,
+    #050008 70%,
+    #030005 85%,
+    #000000 100%
+  );
 }
 
 /* Make main wrappers transparent so the gradient shows through */
